@@ -14,17 +14,8 @@ app.use(cors());
 
 app.get("/",function(req,res){
     prt.log(msg.startmsg);
-    fs.readFileSync("../data/demo1.txt", (err,data) => {
-        if(err){
-            prt.log(err);
-            res.send(err);
-        }else{
-            prt.log(data);
-            res.send(data);
-        }
-    })
-    prt.log("Error while reading txt file");
-    res.end("Error while reading txt file");
+    const data = fs.readFileSync("../data/demo1.txt", "utf8");
+    res.end(data);
 })
 
 server.listen(port,()=>{
