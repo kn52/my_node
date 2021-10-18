@@ -5,6 +5,7 @@ var msg = require("../../data/Message.js");
 var prt = require("../../Print.js"); 
 const fs = require('fs');
 const cors = require('cors');
+const url = require('url');
 
 const app=express();
 const port = 8080 || process.env.PORT;
@@ -18,29 +19,36 @@ app.get("/", (req,res) => {
 });
 
 app.post("/fetch", (req,res) => {
-    var sql = req.body.sql;
-    dbops(sql,(result)=>{
+    var sqlquery = req.body.sql;
+    dbops(sqlquery,(result)=>{
         res.status(result.code).send(result);
     });
 });
 
 app.post("/add", (req,res) => {
-    var sql = req.body.sql;
-    dbops(sql,(result)=>{
+    var sqlquery = req.body.sql;
+    dbops(sqlquery,(result)=>{
         res.status(result.code).send(result);
     });
 });
 
 app.post("/update", (req,res) => {
-    var sql = req.body.sql;
-    dbops(sql,(result)=>{
+    var sqlquery = req.body.sql;
+    dbops(sqlquery,(result)=>{
         res.status(result.code).send(result);
     });
 });
 
 app.post("/delete", (req,res) => {
-    var sql = req.body.sql;
-    dbops(sql,(result)=>{
+    var sqlquery = req.body.sql;
+    dbops(sqlquery,(result)=>{
+        res.status(result.code).send(result);
+    });
+});
+
+app.post("/fromurl", (req,res) => {
+    var sqlquery = url.parse(req.url,true).query;
+    dbops(sqlquery.sql,(result)=>{
         res.status(result.code).send(result);
     });
 });
