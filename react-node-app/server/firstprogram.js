@@ -1,7 +1,7 @@
 const http = require('http');
 const express =require('express');
-var msg = require("./Message.js");
-var prt = require("./Print.js"); 
+var msg = require("../data/Message.js");
+var prt = require("../Print.js"); 
 const fs = require('fs');
 const cors = require('cors');
 
@@ -12,23 +12,19 @@ const server = http.createServer(app);
 
 app.use(cors());
 
-// app.get("/", (req, res) => {
-//     res.writeHead(200, {'Content-Type': 'text/html'});
-//     const m = msg.startmsg;
-//     prt.log(m)
-//     res.end(m);
-// })
-
 app.get("/",function(req,res){
-    fs.readFileSync('./demo1.txt', (err,data) => {
+    prt.log(msg.startmsg);
+    fs.readFileSync("../data/demo1.txt", (err,data) => {
         if(err){
-            return res.end(err);
-            console.log(err);
+            prt.log(err);
+            res.send(err);
         }else{
-            console.log(data);
-            // return res.end(data);
+            prt.log(data);
+            res.send(data);
         }
     })
+    prt.log("Error while reading txt file");
+    res.end("Error while reading txt file");
 })
 
 server.listen(port,()=>{
