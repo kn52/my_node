@@ -8,7 +8,8 @@ var con = mysql.createConnection({
 });
 
 con.connect(function (err) {
-    if (err) throw err;
+    if (err) 
+        return err;
     console.log("Connected!");
     // var sql = "Create table customers (name VARCHAR(255), address VARCHAR(255))";
     // var sql1 = "INSERT INTO customers (name, address) VALUES ('Company Ic', 'Highway 38'), ('Company Nc', 'Highway 39'),('Company Oc', 'Highway 40')";
