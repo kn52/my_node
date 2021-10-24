@@ -1,0 +1,46 @@
+@import '../scss/Variables.scss';
+
+.form_main_container{
+  width:99%;
+  outline: none;
+  min-height: 635px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .form_child_container{
+    padding:15px;
+    border:none;
+    border-radius: 5px;
+    width: 400px;
+    height: 300px;
+    display: flex;
+    outline: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .password_field{
+      width:88%;
+      padding:15px;
+      margin-bottom: 5%;
+      outline: none;
+      border-radius: 5px;
+      border:1px solid #33b5e5;
+      color:#33b5e5;
+    }
+
+    .login_button{
+      width:88%;
+      padding:10px;
+      border:1px solid #33b5e5;
+      background-color: #33b5e5;
+      color:#ffffff;
+      font-size: 25px;
+      border-radius: 5px;
+      outline: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card Component should render my component 1`] = `
+<div
+  style={
+    Object {
+      "background": "white",
+      "color": "black",
+      "height": "80%",
+      "left": "0px",
+      "width": "50%",
+    }
+  }
+>
+  <input
+    data-testid="input"
+    maxLength="8"
+    onChange={[Function]}
+    type="text"
+    value=""
+  />
+  <br />
+  <label>
+    Card Number: 
+  </label>
+  <br />
+  <label>
+    Card type
+  </label>
+  <br />
+</div>
+`;

@@ -1,0 +1,11 @@
+export const americanExpress = require('./cardlogo/icons8-amex.svg').default;
+export const dankort = require('./cardlogo/icons8-dankort.svg').default;
+export const dinersClub = require('./cardlogo/icons8-dinersclub.svg').default;
+export const discover = require('./cardlogo/icons8-discover.svg').default;
+export const instaPayment = require('./cardlogo/InstaPayment.png').default;
+export const jcb = require('./cardlogo/icons8-jcb.svg').default;
+export const maestro = require('./cardlogo/icons8-maestro.svg').default;
+export const masterCard = require('./cardlogo/icons8-mastercard.svg').default;
+export const rupay = require('./cardlogo/icons8-rupay.svg').default;
+export const visa = require('./cardlogo/icons8-visa.svg').default;
+export const unionPay = require('./cardlogo/icons8-unionpay.svg').default;

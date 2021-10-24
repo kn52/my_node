@@ -1,0 +1,59 @@
+.home_main_container{
+    padding:10px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5%;
+}
+
+.main_style {
+    color: #33b5e5 ;
+    font-weight: bold;
+    border-radius: 5px;
+    outline: none;
+    border:none;
+}
+
+.home_button{
+    @extend .main_style;
+    @extend .cursor_pointer;
+    padding: 4px 20px 5px 20px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.logout_button{
+    @extend .main_style;
+    @extend .cursor_pointer;
+    padding: 4px 20px 5px 20px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.dropdown_button{
+    @extend .main_style;
+    @extend .cursor_pointer;
+    background-color: #ffffff;
+    padding: 4px 20px 5px 20px;
+    font-size: 20px;
+}
+
+.link_style{
+    @extend .main_style;
+    @extend .cursor_pointer;
+    font-size: 15px;
+    align-content: center;
+    text-decoration: none;
+}
+
+.cursor_pointer{
+    cursor: pointer;
+}
+
+.hello_msg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #33b5e5;
+    min-height: 400px;
+}
+
