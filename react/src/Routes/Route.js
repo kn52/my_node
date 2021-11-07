@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
 import Home from '../Home/Home';
 import Hello from '../MY_REACT/hello/HelloMessage';
 import Card from '../MY_REACT/cards/Card';
@@ -16,23 +16,27 @@ import Select_Options from '../MY_REACT/SelectOptions/Select_Options';
 
 export const DefaultRoute = () => <>
     <Router>
-        <Route path='/' exact render={()=>{ 
-            return (
-                <Redirect to='/login'/>
-            )}
-        }/>
-        <Route path="/login" exact component={Login}/>
-        <PrivateRoute path="/home" exact component={Home}/>
-        <PrivateRoute path="/hellomessage" exact component={Hello}/>
-        <PrivateRoute path="/card" exact component={Card}/>
-        <PrivateRoute path="/qrcode" exact component={QRCodeDemo}/>
-        <PrivateRoute path="/linechart" exact component={LineChart}/>
-        <PrivateRoute path="/carddetails" exact component={CardDetails}/>
-        <PrivateRoute path="/slider" exact component={Slider}/>
-        <PrivateRoute path="/circular" exact component={CircularTimer}/>
-        <PrivateRoute path="/textinput" exact component={TextInput}/>
-        <PrivateRoute path="/buttons" exact component={Buttons}/>
-        <PrivateRoute path="/otpinputfield" exact component={OtpInputField}/>
-        <PrivateRoute path="/selectdrop" exact component={Select_Options}/>
+        <Switch>
+            {/* <Route path='/' exact render={()=>{ 
+                return (
+                    <Redirect to='/login'/>
+                )}
+            }/>
+            <Route path="/login" exact component={Login}/> */}
+            {/* <Route path={["/","/login"]} exact component={Login}/> */}
+            <Route path="/(/|login)/" exact component={Login} />
+            <PrivateRoute path="/home" exact component={Home} />
+            <PrivateRoute path="/hellomessage" exact component={Hello} />
+            <PrivateRoute path="/card" exact component={Card} />
+            <PrivateRoute path="/qrcode" exact component={QRCodeDemo} />
+            <PrivateRoute path="/linechart" exact component={LineChart} />
+            <PrivateRoute path="/carddetails" exact component={CardDetails} />
+            <PrivateRoute path="/slider" exact component={Slider} />
+            <PrivateRoute path="/circular" exact component={CircularTimer} />
+            <PrivateRoute path="/textinput" exact component={TextInput} />
+            <PrivateRoute path="/buttons" exact component={Buttons} />
+            <PrivateRoute path="/otpinputfield" exact component={OtpInputField} />
+            <PrivateRoute path="/selectdrop" exact component={Select_Options} />
+        </Switch>
     </Router>
 </>
