@@ -1,3 +1,5 @@
+$base_color: #33b5e5;
+
 .home_main_container{
     padding:10px;
     display: flex;
@@ -6,7 +8,7 @@
 }
 
 .main_style {
-    color: #33b5e5 ;
+    color: $base_color ;
     font-weight: bold;
     border-radius: 5px;
     outline: none;
@@ -16,25 +18,29 @@
 .home_button{
     @extend .main_style;
     @extend .cursor_pointer;
-    padding: 4px 20px 5px 20px;
-    font-size: 20px;
-    text-decoration: none;
+    @extend .button_sts;
+
+    &:hover{
+        color: $base_color;
+    }
 }
 
 .logout_button{
     @extend .main_style;
     @extend .cursor_pointer;
-    padding: 4px 20px 5px 20px;
-    font-size: 20px;
-    text-decoration: none;
+    @extend .button_sts;
+
+    &:hover{
+        color: $base_color;
+    }
 }
 
 .dropdown_button{
     @extend .main_style;
     @extend .cursor_pointer;
+    @extend .button_sts;
+
     background-color: #ffffff;
-    padding: 4px 20px 5px 20px;
-    font-size: 20px;
 }
 
 .link_style{
@@ -49,11 +55,17 @@
     cursor: pointer;
 }
 
+.button_sts {
+    padding: 4px 20px 5px 20px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
 .hello_msg{
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #33b5e5;
+    color: $base_color;
     min-height: 400px;
 }
 

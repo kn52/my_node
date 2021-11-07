@@ -41,7 +41,6 @@ const Home = () => {
             <div className="home_main_container">
                 <div>
                     <Link to={"/home"} className="home_button">Home</Link>
-                    &nbsp;&nbsp;
                     <Dropdown
                         trigger={['click']}
                         overlay={menu}
@@ -56,7 +55,7 @@ const Home = () => {
             {
                 window.location.href.trim().toLowerCase().includes("home") && 
                 <div className="hello_msg">
-                        <h1>Hi Stranger! <br/> Welcome in Daemon's World</h1>
+                    <h1>Hi <br /> Daemon!</h1>
                 </div>
             }
         </>
