@@ -13,6 +13,7 @@ import TextInput from '../MY_REACT/TextInput/TextInput';
 import Buttons from '../MY_REACT/Buttons/Buttons';
 import OtpInputField from '../MY_REACT/Otp/OtpInputField';
 import Select_Options from '../MY_REACT/SelectOptions/Select_Options';
+import { Check_Box } from '../MY_REACT/Check_Box/Check_Box';
 
 export const DefaultRoute = () => <>
     <Router>
@@ -37,6 +38,7 @@ export const DefaultRoute = () => <>
             <PrivateRoute path="/buttons" exact component={Buttons} />
             <PrivateRoute path="/otpinputfield" exact component={OtpInputField} />
             <PrivateRoute path="/selectdrop" exact component={Select_Options} />
+            <PrivateRoute path="/checkbx" exact component={Check_Box} />
         </Switch>
     </Router>
 </>

@@ -29,6 +29,8 @@ const Home = () => {
             <MenuItem key='9'><Link to={"/otpinputfield"} className="link_style">OtpInputField</Link></MenuItem>
             <Divider />
             <MenuItem key='10'><Link to={"/selectdrop"} className="link_style">SelectOptions</Link></MenuItem>
+            <Divider />
+            <MenuItem Key='11'><Link to={"/checkbx"}  className="link_style">CheckBox</Link></MenuItem>
         </Menu>
     );
 
