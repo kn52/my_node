@@ -30,6 +30,7 @@ class React_Parent_Render extends Component {
 
     render() {
         const { count } = this.state;
+        console.log("==============================RENDERING PARENT COMPONENT==============================");
         return (
             <>
                 <Home />
