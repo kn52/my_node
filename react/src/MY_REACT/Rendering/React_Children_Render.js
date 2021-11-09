@@ -60,7 +60,7 @@ class React_Children_Render extends Component {
     }
 
     render() {
-        const { nwc } = this.props;
+        const { nwc, plus,minus,reset } = this.props;
         console.log("==============================RENDERING CHILD COMPONENT==============================");
         return (
             <>
@@ -68,12 +68,12 @@ class React_Children_Render extends Component {
                     <div className="parent_cont">
                         <h1 className="nw_count">{nwc}</h1>
                         <div className="button_cont">
-                            <button className="button_sts" onClick={() => this.props.minus()}>Minus</button>
+                            <button className="button_sts" onClick={() => minus()}>Minus</button>
                             &nbsp;&nbsp;
-                            <button className="button_sts" onClick={() => this.props.plus()}>Plus</button>
+                            <button className="button_sts" onClick={() => plus()}>Plus</button>
                         </div>
                         <div className="button_cont">
-                            <button className="button_sts" onClick={() => this.props.reset()}>Reset</button>
+                            <button className="button_sts" onClick={() => reset()}>Reset</button>
                         </div>
                     </div>
                 </div>
