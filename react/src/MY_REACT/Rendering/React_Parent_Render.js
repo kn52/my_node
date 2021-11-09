@@ -5,8 +5,8 @@ import React_Children_Render from './React_Children_Render';
 
 class React_Parent_Render extends Component {
 
-    constructor(props){
-        super(props);
+    constructor(){
+        super();
         this.state={
             count: 0
         }
@@ -24,12 +24,16 @@ class React_Parent_Render extends Component {
         await this.setState({count: dec})
     }
 
+    handleReset = async () =>{
+        await this.setState({count: 0})
+    }
+
     render() {
         const { count } = this.state;
         return (
             <>
                 <Home />
-                <React_Children_Render nwc={count} plus={this.handlePlus} minus={this.handleMinus}/>
+                <React_Children_Render nwc={count} plus={this.handlePlus} minus={this.handleMinus} reset={this.handleReset}/>
             </>
         );
     };

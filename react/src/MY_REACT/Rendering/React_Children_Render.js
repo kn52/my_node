@@ -5,9 +5,6 @@ class React_Children_Render extends Component {
 
     constructor(props){
         super(props);
-        this.state={
-            count: 0
-        }
     }
 
     componentWillMount() {
@@ -41,10 +38,13 @@ class React_Children_Render extends Component {
                 <div className="main_cont">
                     <div className="parent_cont">
                         <h1 className="nw_count">{nwc}</h1>
-                        <div>
+                        <div className="button_cont">
                             <button className="button_sts" onClick={() => this.props.minus()}>Minus</button>
                             &nbsp;&nbsp;
                             <button className="button_sts" onClick={() => this.props.plus()}>Plus</button>
+                        </div>
+                        <div className="button_cont">
+                            <button className="button_sts" onClick={() => this.props.reset()}>Reset</button>
                         </div>
                     </div>
                 </div>

@@ -8,10 +8,16 @@
 
     .parent_cont{
         flex-direction: $flex-direction-column;
+        align-items: $align-items-center;
     }
     
     .nw_count {
         color: $theme-color;
+    }
+
+    .button_cont{
+        padding: 5px;
+        width:100%;
     }
 
     .button_sts{
