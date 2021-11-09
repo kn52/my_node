@@ -3,10 +3,12 @@ import './React_Render.scss';
 
 class React_Children_Render extends Component {
 
-    constructor(props){
-        super(props);
+    constructor(){
+        super();
+        this.state={
+            msg: "React rendering sequence"
+        }
     }
-
     componentWillMount() {
         console.log('Component WILL MOUNT!')
     }
@@ -14,20 +16,47 @@ class React_Children_Render extends Component {
         console.log('Component DID MOUNT!')
     }
     componentWillReceiveProps(newProps) {
-        console.log('Component WILL RECIEVE PROPS!')
+        console.log('Component WILL RECIEVE PROPS!');
+        console.log(newProps);
     }
     shouldComponentUpdate(newProps, newState) {
         console.log('Component SHOULD UPDATE!')
+        console.log(newProps);
+        console.log(newState);
         return true;
     }
     componentWillUpdate(nextProps, nextState) {
         console.log('Component WILL UPDATE!');
+        console.log(nextProps);
+        console.log(nextState);
     }
     componentDidUpdate(prevProps, prevState) {
         console.log('Component DID UPDATE!')
+        console.log(prevProps);
+        console.log(prevState);
     }
     componentWillUnmount() {
         console.log('Component WILL UNMOUNT!')
+    }
+
+    static getDerivedStateFromProps(props,state){
+        console.log('getDerivedStateFromProps method is called');
+        console.log(props);
+        console.log(state);
+    }
+
+    static getDerivedStateFromError(error) {
+        console.log('getDerivedStateFromError method is called ');
+        console.log(error);
+        return {
+           err: true,
+        };
+     }
+
+    getSnapshotBeforeUpdate(prevProps, prevState) {
+        console.log('getSnapshotBeforeUpdate method is called ');
+        console.log(prevProps);
+        console.log(prevState);
     }
 
     render() {

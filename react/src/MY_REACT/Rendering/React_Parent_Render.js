@@ -33,7 +33,8 @@ class React_Parent_Render extends Component {
         return (
             <>
                 <Home />
-                <React_Children_Render nwc={count} plus={this.handlePlus} minus={this.handleMinus} reset={this.handleReset}/>
+                <React_Children_Render nwc={count} plus={this.handlePlus} 
+                    minus={this.handleMinus} reset={this.handleReset}/>
             </>
         );
     };
