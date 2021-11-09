@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Check_Box.scss';
 import Home from '../../Home/Home';
 
 export const Check_Box = () => {
@@ -20,8 +21,8 @@ export const Check_Box = () => {
                         type='checkbox'
                         className='custom_control_input'
                         id="isChecked"
-                        checked={isChecked === true}
-                        readOnly onChange={() => this.handleSwitchChange()}
+                        // checked={isChecked === true}
+                        // readOnly onChange={() => this.handleSwitchChange()}
                     />
                     <label className='custom_control_label' htmlFor="isChecked" style={{ color: 'black' }}></label>
                 </div>

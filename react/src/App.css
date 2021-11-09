@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -11,7 +11,7 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
+} */
 
 .App-header {
   background-color: #ffffff;
@@ -35,4 +35,27 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+*::-webkit-scrollbar{
+  width: 10px;
+  background-color:#fff;
+}
+
+*::-webkit-scrollbar-track {
+  background-color:#fff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color:#33b5e5;
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb:hover{
+      border-radius: 5px;
+      background-color: #33b5e5;
+}
+
+*::-webkit-scrollbar-button{
+  display: none;
 }

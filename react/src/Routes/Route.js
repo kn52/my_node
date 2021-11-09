@@ -14,6 +14,7 @@ import Buttons from '../MY_REACT/Buttons/Buttons';
 import OtpInputField from '../MY_REACT/Otp/OtpInputField';
 import Select_Options from '../MY_REACT/SelectOptions/Select_Options';
 import { Check_Box } from '../MY_REACT/Check_Box/Check_Box';
+import React_Parent_Render from '../MY_REACT/Rendering/React_Parent_Render';
 
 export const DefaultRoute = () => <>
     <Router>
@@ -24,8 +25,7 @@ export const DefaultRoute = () => <>
                 )}
             }/>
             <Route path="/login" exact component={Login}/> */}
-            {/* <Route path={["/","/login"]} exact component={Login}/> */}
-            <Route path="/(/|login)/" exact component={Login} />
+            <Route path={["/","/login"]} exact component={Login}/>
             <PrivateRoute path="/home" exact component={Home} />
             <PrivateRoute path="/hellomessage" exact component={Hello} />
             <PrivateRoute path="/card" exact component={Card} />
@@ -39,6 +39,7 @@ export const DefaultRoute = () => <>
             <PrivateRoute path="/otpinputfield" exact component={OtpInputField} />
             <PrivateRoute path="/selectdrop" exact component={Select_Options} />
             <PrivateRoute path="/checkbx" exact component={Check_Box} />
+            <PrivateRoute path="/reactrender" exact component={React_Parent_Render} />
         </Switch>
     </Router>
 </>

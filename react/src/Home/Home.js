@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
     const menu = (
-        <Menu>
+        <Menu className="menu_container">
             <MenuItem><Link to={{ pathname: "/hellomessage", name: 'Daemons' }} className="link_style">Hello Message</Link></MenuItem>
             <Divider />
             <MenuItem key='1'><Link to={"/card"} className="link_style">Card</Link></MenuItem >
@@ -31,6 +31,8 @@ const Home = () => {
             <MenuItem key='10'><Link to={"/selectdrop"} className="link_style">SelectOptions</Link></MenuItem>
             <Divider />
             <MenuItem Key='11'><Link to={"/checkbx"}  className="link_style">CheckBox</Link></MenuItem>
+            <Divider />
+            <MenuItem Key='12'><Link to={"/reactrender"}  className="link_style">Render React Elements</Link></MenuItem>
         </Menu>
     );
 

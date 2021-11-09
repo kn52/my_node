@@ -1,0 +1,27 @@
+@import '../../scss/Common.scss';
+@import '../../scss/Variables.scss';
+
+.main_cont{
+    width: 100%;
+    display: $display-flex;
+    justify-content: $justify-content-center;
+
+    .parent_cont{
+        flex-direction: $flex-direction-column;
+    }
+    
+    .nw_count {
+        color: $theme-color;
+    }
+
+    .button_sts{
+        @extend .cursor_pointer;
+        @extend .button_sts;
+        @extend .outline_none;
+        @extend .border_none;
+        padding: 4px 20px 5px 20px;
+        font-size: 20px;
+        border-radius: 5px;
+        color:$theme-color;    
+    }
+}
