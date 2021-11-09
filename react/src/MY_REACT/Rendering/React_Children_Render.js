@@ -43,6 +43,7 @@ class React_Children_Render extends Component {
         console.log('getDerivedStateFromProps method is called');
         console.log(props);
         console.log(state);
+        return null;
     }
 
     static getDerivedStateFromError(error) {
@@ -57,11 +58,12 @@ class React_Children_Render extends Component {
         console.log('getSnapshotBeforeUpdate method is called ');
         console.log(prevProps);
         console.log(prevState);
+        return null;
     }
 
     render() {
         const { nwc, plus,minus,reset } = this.props;
-        console.log("==============================RENDERING CHILD COMPONENT==============================");
+        console.log("===============RENDERING CHILD COMPONENT===============");
         return (
             <>
                 <div className="main_cont">
