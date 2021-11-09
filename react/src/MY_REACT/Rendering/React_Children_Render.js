@@ -61,7 +61,7 @@ class React_Children_Render extends Component {
 
     render() {
         const { nwc } = this.props;
-        console.log("========================================================");
+        console.log("==============================RENDERING COMPONENT==============================");
         return (
             <>
                 <div className="main_cont">
