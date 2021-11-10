@@ -1,32 +1,41 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Check_Box.scss';
 import Home from '../../Home/Home';
 
-export const Check_Box = () => {
+class Check_Box extends React.Component{
 
-    const [isChecked, setIsChecked] = useState(false);
-
-    const handleSwitchChange = () =>{
-        var isCheck = !isChecked;
-        setIsChecked(isCheck);
+    constructor(){
+        super();
+        this.state={
+            isChecked:false
+        }
     }
 
-    return (
-        <>
-            <Home/>
-            <div className="checkbox_main_container">
-                <div className='custom_control custom_switch custom_random_switch'>
-                    <label className="custom_random_switch_label">{isChecked ? "Active" : "InActive"}</label>
-                    <input
-                        type='checkbox'
-                        className='custom_control_input'
-                        id="isChecked"
-                        checked={isChecked === true}
-                        readOnly onChange={() => handleSwitchChange()}
-                    />
-                    <label className='custom_control_label' htmlFor="isChecked" style={{ color: 'black' }}></label>
+    handleSwitchChange = () =>{
+        var isCheck = !this.state.isChecked;
+        this.setState({isChecked:isCheck});
+    }
+
+    render(){
+        return (
+            <>
+                <Home/>
+                <div className="checkbox_main_container">
+                    <div className='custom_control custom_switch'>
+                        <label className="custom_random_switch_label">{this.state.isChecked ? "Active" : "InActive"}</label>
+                        <input
+                            type='checkbox'
+                            className='custom_control_input'
+                            id="isChecked"
+                            checked={this.state.isChecked === true}
+                            onClick={this.handleSwitchChange}
+                        />
+                        <label className='custom_control_label' htmlFor="isChecked" style={{ color: 'black' }}></label>
+                    </div>
                 </div>
-            </div>
-        </>
-    );
+            </>
+        );
+    }
 }
+
+export default Check_Box;

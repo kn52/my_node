@@ -13,7 +13,7 @@ import TextInput from '../MY_REACT/TextInput/TextInput';
 import Buttons from '../MY_REACT/Buttons/Buttons';
 import OtpInputField from '../MY_REACT/Otp/OtpInputField';
 import Select_Options from '../MY_REACT/SelectOptions/Select_Options';
-import { Check_Box } from '../MY_REACT/Check_Box/Check_Box';
+import Check_Box from '../MY_REACT/Check_Box/Check_Box';
 import React_Parent_Render from '../MY_REACT/Rendering/React_Parent_Render';
 
 export const DefaultRoute = () => <>
