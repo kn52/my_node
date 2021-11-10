@@ -68,7 +68,7 @@ class React_Children_Render extends Component {
             <>
                 <div className="main_cont">
                     <div className="parent_cont">
-                        <h1 className="nw_count">{nwc}</h1>
+                        <div className="nw_count">{nwc}</div>
                         <div className="button_cont">
                             <button className="button_sts" onClick={() => minus()}>Minus</button>
                             &nbsp;&nbsp;

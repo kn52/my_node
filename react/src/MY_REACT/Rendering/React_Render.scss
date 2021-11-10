@@ -7,12 +7,18 @@
     justify-content: $justify-content-center;
 
     .parent_cont{
+        display: $display-flex;
         flex-direction: $flex-direction-column;
         align-items: $align-items-center;
     }
     
     .nw_count {
+        @extend .border_none;
         color: $theme-color;
+        padding: 20px;
+        font-size: 40px;
+        margin-bottom: 15px;
+        font-weight: bold;
     }
 
     .button_cont{

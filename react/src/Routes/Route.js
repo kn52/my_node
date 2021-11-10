@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from '../Home/Home';
 import Hello from '../MY_REACT/hello/HelloMessage';
 import Card from '../MY_REACT/cards/Card';
