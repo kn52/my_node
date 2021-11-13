@@ -15,6 +15,7 @@ import OtpInputField from '../MY_REACT/Otp/OtpInputField';
 import Select_Options from '../MY_REACT/SelectOptions/Select_Options';
 import Check_Box from '../MY_REACT/Check_Box/Check_Box';
 import React_Parent_Render from '../MY_REACT/Rendering/React_Parent_Render';
+import PwaHome from '../MY_REACT/PWA/PwaHome';
 
 export const DefaultRoute = () => <>
     <Router>
@@ -40,6 +41,7 @@ export const DefaultRoute = () => <>
             <PrivateRoute path="/selectdrop" exact component={Select_Options} />
             <PrivateRoute path="/checkbx" exact component={Check_Box} />
             <PrivateRoute path="/reactrender" exact component={React_Parent_Render} />
+            <PrivateRoute path="/pwahome" exact component={PwaHome} />
         </Switch>
     </Router>
 </>

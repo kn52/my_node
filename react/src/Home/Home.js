@@ -33,6 +33,8 @@ const Home = () => {
             <MenuItem key='11'><Link to={"/checkbx"}  className="link_style">CheckBox</Link></MenuItem>
             <Divider />
             <MenuItem key='12'><Link to={"/reactrender"}  className="link_style">Render React Elements</Link></MenuItem>
+            <Divider />
+            <MenuItem key='12'><Link to={"/pwahome"}  className="link_style">Pwa Home</Link></MenuItem>
         </Menu>
     );
 
