@@ -16,7 +16,7 @@ const Login = () => {
     if(password.trim() !== ""){
       if(AesValidation(password)){
         await sessionStorage.setItem("password",Encrypt(password));
-        window.location.replace("master/home");
+        window.location.replace("daemon/home");
       }else{
         alert("Invalid Password");
         await setPassword("");
@@ -28,7 +28,7 @@ const Login = () => {
 
   useEffect(()=>{
     if(sessionStorage.getItem("password") !== null){
-      window.location.replace("master/home");
+      window.location.replace("daemon/home");
     }
   },[])
 

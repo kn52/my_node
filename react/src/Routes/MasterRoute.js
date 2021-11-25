@@ -5,6 +5,6 @@ import Master from '../MY_REACT/MasterLayout/Master';
 export const MasterRoute = () => <>
     <Router>
         <Route path={["/","/login"]} exact  component={Login} />
-        <Route path="/master" component={Master} />
+        <Route path="/daemon" component={Master} />
     </Router>
 </>
