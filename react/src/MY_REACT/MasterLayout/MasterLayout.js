@@ -1,6 +1,6 @@
 import React from 'react';
 import Home from '../../Home/Home';
-import { aux_exp } from '../Auxing/_Aux';
+import { AUX_EXP } from '../Auxing/_Aux';
 import './MasterLayout.scss';
 
 export class MasterLayout extends React.Component {
@@ -9,7 +9,7 @@ export class MasterLayout extends React.Component {
         const { children } = this.props; 
         
         return (
-            <aux_exp>
+            <AUX_EXP>
                 <div className="layout">
                     <div>
                         { 
@@ -21,7 +21,7 @@ export class MasterLayout extends React.Component {
                         {children}
                     </div>
                 </div>
-            </aux_exp>
+            </AUX_EXP>
         );
     }
 }
