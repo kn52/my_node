@@ -1,4 +1,3 @@
-import React from 'react';
 import './Home.scss';
 import Dropdown from 'rc-dropdown';
 import Menu, { Item as MenuItem, Divider } from 'rc-menu';
