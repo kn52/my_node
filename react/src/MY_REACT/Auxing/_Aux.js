@@ -1,1 +1,1 @@
-export default ({children}) =>  children;
+export const aux_exp = ({children}) =>  children;

@@ -1,24 +1,27 @@
 import React from 'react';
 import Home from '../../Home/Home';
+import { aux_exp } from '../Auxing/_Aux';
 import './MasterLayout.scss';
-import Aux from '../Auxing/_Aux.js';
 
 export class MasterLayout extends React.Component {
 
     render() {
         const { children } = this.props; 
-
+        
         return (
-            <Aux>
+            <aux_exp>
                 <div className="layout">
                     <div>
-                        <Home />
+                        { 
+                            (window.sessionStorage.getItem("password") !== null && !window.location.pathname.includes("home")) 
+                                && <Home /> 
+                        }
                     </div>
                     <div className="layout_content">
                         {children}
                     </div>
                 </div>
-            </Aux>
+            </aux_exp>
         );
     }
 }
