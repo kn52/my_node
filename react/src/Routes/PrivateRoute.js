@@ -1,7 +1,14 @@
-import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
+import { Route } from 'react-router-dom';
+import Login from '../Login/Login';
 
-const PrivateRoute = (props) => sessionStorage.getItem("password") === null ?
-    (<Redirect to="/login"/>) : (<Route path={props.path} exact component={props.component}/> );  
+const PrivateRoute = (props) => {
+    if(sessionStorage.getItem("password") === null){
+        return (<Route path="/" exact component={Login}/>);  
+    }
+    else
+    {
+        return (<Route path={props.path} exact component={props.component}/> );
+    }
+}
 
 export default PrivateRoute;

@@ -1,5 +1,4 @@
 import React from 'react';
-import Home from '../../Home/Home';
 import InputAdornment from "@material-ui/core/InputAdornment";
 import TextField from "@material-ui/core/TextField";
 
@@ -21,7 +20,6 @@ class TextInput extends React.Component {
         const { isInputProps } = this.state;
         return (
             <>
-                <Home />
                 <div style={{ marginTop: '90px', width: '900px', padding: '20px' }}>
                     {
                         isInputProps ? 

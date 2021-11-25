@@ -1,5 +1,4 @@
 import React from 'react';
-import Home from '../../Home/Home';
 import './CardDetails.scss';
 import CheckCardType from './CheckCardType';
 import VerifyCardNumber from './VerifyCardNumber';
@@ -86,7 +85,6 @@ class CreditCardForm extends React.Component {
 function CardDetails() {
   return (
     <>
-      <div><Home/></div>
       <h1 className="header">Credit Card Number Validation</h1>
       <div className="cc-form">
         <CreditCardForm />

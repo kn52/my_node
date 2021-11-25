@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './React_Render.scss';
-import Home from '../../Home/Home';
 import ReactChildrenRender from './ReactChildrenRender';
 
 class React_Parent_Render extends Component {
@@ -33,7 +32,6 @@ class React_Parent_Render extends Component {
         console.log("===============RENDERING PARENT COMPONENT===============");
         return (
             <>
-                <Home />
                 <ReactChildrenRender nwc={count} plus={this.handlePlus} 
                     minus={this.handleMinus} reset={this.handleReset}/>
             </>

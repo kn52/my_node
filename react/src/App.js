@@ -1,12 +1,3 @@
-import './App.css';
-import { DefaultRoute } from './Routes/Route';
+import { MasterRoute } from './Routes/MasterRoute';
 
-function App() {
-  return (
-    <div className="App_header">
-      <DefaultRoute/>
-    </div>
-  );
-}
-
-export default App;
+export const App = () => <MasterRoute/>;

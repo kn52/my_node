@@ -1,38 +1,17 @@
-$base_color: #33b5e5;
-
-.home_main_container{
-    padding:10px;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 5%;
-}
+@import '../scss/Variables.scss';
+@import '../scss/Common.scss';
 
 .main_style {
-    color: $base_color ;
-    font-weight: bold;
+    color: $theme-color ;
+    font-weight: 600;
     border-radius: 5px;
     outline: none;
     border:none;
 }
 
-.home_button{
-    @extend .main_style;
-    @extend .cursor_pointer;
-    @extend .button_sts;
-
-    &:hover{
-        color: $base_color;
-    }
-}
-
-.logout_button{
-    @extend .main_style;
-    @extend .cursor_pointer;
-    @extend .button_sts;
-
-    &:hover{
-        color: $base_color;
-    }
+.button_sts {
+    font-size: 20px;
+    text-decoration: none;
 }
 
 .dropdown_button{
@@ -49,24 +28,6 @@ $base_color: #33b5e5;
     font-size: 15px;
     align-content: center;
     text-decoration: none;
-}
-
-.cursor_pointer{
-    cursor: pointer;
-}
-
-.button_sts {
-    padding: 4px 20px 5px 20px;
-    font-size: 20px;
-    text-decoration: none;
-}
-
-.hello_msg{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: $base_color;
-    min-height: 400px;
 }
 
 .menu_container{

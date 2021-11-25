@@ -1,6 +1,4 @@
-import React from 'react';
 import {CanvasJSChart} from 'canvasjs-react-charts';
-import Home from '../../Home/Home';
 
 const splineOptions = {
     animationEnabled: true,
@@ -113,7 +111,6 @@ const stepOptions = {
 
 const LineChart = () => <>
     <div>
-        <div><Home/></div>
         <div><CanvasJSChart options = {lineOptions}/></div>
         <div><CanvasJSChart options = {splineOptions}/></div>
         <div><CanvasJSChart options = {stepOptions}/></div>

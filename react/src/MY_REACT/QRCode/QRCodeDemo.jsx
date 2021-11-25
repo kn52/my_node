@@ -1,5 +1,4 @@
 import React from 'react';
-import Home from '../../Home/Home';
 
 class QRCodeDemo extends React.Component {
 
@@ -20,7 +19,6 @@ class QRCodeDemo extends React.Component {
         var QRCode = require('qrcode.react');
         return (
             <>
-                <Home/>
                 <div style={{ left: "10px", color: "black", width: "50%", height: "80%", background: "white" }}>
                     <QRCode value="http://facebook.github.io/react/" />
                 </div>

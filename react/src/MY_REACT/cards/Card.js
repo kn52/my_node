@@ -1,5 +1,4 @@
 import React from 'react';
-import Home from '../../Home/Home';
 import CheckCardType from './CheckCardType';
 
 class Card extends React.Component {
@@ -31,7 +30,6 @@ class Card extends React.Component {
     render() {
         return (
             <>
-                <div><Home /></div>
                 <div style={{width:'100%',display:'flex',justifyContent:'center',flexDirection:'column', alignItems:'center', color: "black", height: "80%", background: "white" }}>
                     <input data-testid="input" type="text" value={this.state.cardNumber} maxLength="8" onChange={(e) => {
                         this.setState({ cardNumber: e.target.value }); this.handleCardType(e)

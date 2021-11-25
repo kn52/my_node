@@ -1,0 +1,49 @@
+@import '../../scss/Variables.scss';
+@import '../../scss/Common.scss';
+
+.layout{
+    @extend .outline_none;
+    @extend .text_decoration_none;
+
+    .layout_header{
+        border: 1px solid #ffffff;
+        height:50px;
+        padding:10px;
+        display: $display-flex;
+        justify-content: $justify-content-space-between;
+        align-items: $align-items-center;
+        background-color: #ffffff;
+
+        .link_to {
+            padding: 5px;
+            color: $theme-color;
+            width: 60px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 20px;
+
+            &:hover{
+                @extend .text_decoration_none;
+                @extend .cursor_pointer;
+            }
+        }
+
+        .logout_link_to{
+            padding: 5px;
+            color: #ff0000;
+            width: 60px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 20px;
+
+            &:hover{
+                @extend .text_decoration_none;
+                @extend .cursor_pointer;
+            }
+        }
+
+        .layout_content{
+            @extend .text_decoration_none;
+        }
+    }
+}

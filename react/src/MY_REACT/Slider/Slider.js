@@ -4,7 +4,6 @@ import Slider from '@material-ui/core/Slider';
 import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import Home from '../../Home/Home';
 
 const PrettoSlider = withStyles({
   root: {
@@ -50,7 +49,6 @@ export default function CustomizedSlider() {
 
   return (
     <>
-      <Home />
       <div style={{ marginTop: '90px', width: '900px', padding: '20px' }}>
         <PrettoSlider valueLabelDisplay="on" aria-label="pretto slider" defaultValue={20} />
         <Paper square>

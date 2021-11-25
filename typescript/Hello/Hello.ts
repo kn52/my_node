@@ -3,5 +3,6 @@ class Hello {
         console.log("Hi.....");
     }
 }
+let a = "aashish";
 
 new Hello().Display();

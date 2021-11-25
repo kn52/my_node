@@ -1,6 +1,5 @@
 import React from 'react';
 import OtpInput from 'react-otp-input';
-import Home from '../../Home/Home';
 import './OtpInputField.scss';
 
 class OtpInputField extends React.Component{
@@ -17,7 +16,6 @@ class OtpInputField extends React.Component{
     render(){
         return(
             <>
-                <Home />
                 <div className="otp_main_container">
                     <OtpInput containerStyle="otp-verify" value={this.state.otp}
                         isInputNum={true} onChange={this.handleChange}

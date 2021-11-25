@@ -1,5 +1,4 @@
 import React from 'react';
-import Home from '../../Home/Home';
 import $ from 'jquery';
 
 class Select_Options extends React.Component{
@@ -29,7 +28,6 @@ class Select_Options extends React.Component{
         
         return (
             <>
-                <Home />
                 <div className="main-container">
                     <select name="cars" id="cars" onChange={this.setCar}>
                         <option value="volvo">Volvo</option>

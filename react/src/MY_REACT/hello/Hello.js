@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import Home from "../../Home/Home";
 
 export default function Hello(props) {
   useEffect(()=>{
@@ -16,7 +15,6 @@ export default function Hello(props) {
   } else {
     return(
       <>
-        <div><Home/></div>
         <h1>Hey, Stranger...</h1>
       </>
     ) 

@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import Home from "../../Home/Home";
 
 export default function HelloMessage(props) {
   useEffect(()=>{
@@ -8,7 +7,6 @@ export default function HelloMessage(props) {
 
   return(
       <>
-        <div><Home/></div>
         <h1>{props.location.name ? "Hello, " + props.location.name+"!": "Hey Stranger..."}</h1>
       </>
     )

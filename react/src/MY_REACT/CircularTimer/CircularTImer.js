@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
-import Home from "../../Home/Home";
 import "./CircularTimer.scss";
 
 function CircularTimer () {
@@ -24,7 +23,6 @@ function CircularTimer () {
     
     return (
         <>
-            <Home />
             <CountdownCircleTimer
                 isPlaying
                 duration={300}

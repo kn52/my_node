@@ -1,5 +1,5 @@
 import { Paper } from "@material-ui/core";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AesValidation from "../AESValidation/AesValidation";
 import Encrypt from "../Encryption/Encrypt";
 import './Login.scss';
@@ -16,7 +16,7 @@ const Login = () => {
     if(password.trim() !== ""){
       if(AesValidation(password)){
         await sessionStorage.setItem("password",Encrypt(password));
-        window.location.replace("/home");
+        window.location.replace("home");
       }else{
         alert("Invalid Password");
         await setPassword("");
@@ -25,6 +25,12 @@ const Login = () => {
       alert("Enter Password");
     }
   }
+
+  useEffect(()=>{
+    if(sessionStorage.getItem("password") !== null){
+      window.location.replace("home");
+    }
+  },[])
 
   return (
     <div className="form_main_container">
