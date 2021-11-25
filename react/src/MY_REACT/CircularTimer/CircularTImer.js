@@ -26,7 +26,7 @@ function CircularTimer () {
             <CountdownCircleTimer
                 isPlaying
                 duration={300}
-                initialRemainingTime={60}
+                initialRemainingTime={300}
                 colors={[["#33b5e5",0.99],["#A30000"]]}
                 onComplete={() => [false, 1000]}>
                 {renderTime}
