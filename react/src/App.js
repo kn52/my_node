@@ -1,3 +1,3 @@
-import { MasterRoute } from './Routes/MasterRoute';
+import { ParentRoute } from './Routes/ParentRoute';
 
-export const App = () => <MasterRoute/>;
+export const App = () => <ParentRoute/>;

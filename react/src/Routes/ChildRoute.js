@@ -6,7 +6,7 @@ import LineChart from '../MY_REACT/LineChart/LineChart';
 import QRCodeDemo from '../MY_REACT/QRCode/QRCodeDemo';
 import CustomizedSlider from '../MY_REACT/Slider/Slider';
 import CircularTimer from '../MY_REACT/CircularTimer/CircularTImer';
-import PrivateRoute from './PrivateRoute';
+import { PrivateRoute } from './PrivateRoute';
 import TextInput from '../MY_REACT/TextInput/TextInput';
 import Buttons from '../MY_REACT/Buttons/Buttons';
 import OtpInputField from '../MY_REACT/Otp/OtpInputField';
@@ -15,13 +15,10 @@ import Check_Box from '../MY_REACT/Check_Box/Check_Box';
 import React_Parent_Render from '../MY_REACT/Rendering/React_Parent_Render';
 import PwaHome from '../MY_REACT/PWA/PwaHome';
 import MasterLayout from '../MY_REACT/MasterLayout/MasterLayout';
-import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
 
-export class ComponentRoute extends React.Component {
-    
-    render(){
-        const { match } = this.props.urls;
+export const ChildRoute = (props) => {
+
+        const { match } = props.urls;
         
         return (
             <MasterLayout>
@@ -42,5 +39,4 @@ export class ComponentRoute extends React.Component {
                 <PrivateRoute path={`${match.url}/pwahome`} exact component={PwaHome} />
             </MasterLayout>
         );
-    }
 }

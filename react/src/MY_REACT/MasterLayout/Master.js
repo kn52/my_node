@@ -1,13 +1,4 @@
-import React from 'react';
-import { ComponentRoute } from '../../Routes/ComponentRoute';
+import { ChildRoute } from '../../Routes/ChildRoute';
 import './MasterLayout.scss';
 
-export class Master extends React.Component {
-    render() {
-        return (
-            <ComponentRoute urls={this.props}/>
-        );
-    }
-}
-
-export default Master;
+export const Master = (props) => <ChildRoute urls={props}/>;
