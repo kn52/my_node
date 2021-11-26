@@ -44,6 +44,14 @@
 
         .layout_content{
             @extend .text_decoration_none;
+            padding: 20px 15px;
+            .hello_msg{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: $theme-color;
+                min-height: 400px;
+            }
         }
     }
 }

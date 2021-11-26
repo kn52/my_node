@@ -5,20 +5,29 @@ import './MasterLayout.scss';
 
 export class MasterLayout extends React.Component {
 
+    clearStorage = () =>{
+        debugger;
+        sessionStorage.clear();
+        window.location.replace(`/`);
+    }
+
     render() {
         const { children } = this.props; 
         
         return (
             <AUX_EXP>
                 <div className="layout">
-                    <div>
-                        { 
-                            (window.sessionStorage.getItem("password") !== null && !window.location.pathname.includes("home")) 
-                                && <Home /> 
-                        }
+                    <div className="layout_header">
+                        <Home /> 
                     </div>
                     <div className="layout_content">
-                        {children}
+                        {
+                            window.location.href.trim().toLowerCase().includes("home") ?
+                                <div className="hello_msg">
+                                    <h1>Hi <br /> Daemon!</h1>
+                                </div>
+                                : <>{children}</>
+                        }
                     </div>
                 </div>
             </AUX_EXP>
