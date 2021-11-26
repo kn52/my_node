@@ -5,12 +5,6 @@ import './MasterLayout.scss';
 
 export class MasterLayout extends React.Component {
 
-    clearStorage = () =>{
-        debugger;
-        sessionStorage.clear();
-        window.location.replace(`/`);
-    }
-
     render() {
         const { children } = this.props; 
         

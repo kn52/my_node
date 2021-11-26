@@ -1,20 +1,21 @@
+@import '../../scss/Colors.scss';
 @import '../../scss/Common.scss';
 @import '../../scss/Variables.scss';
 
 .main_cont{
     width: 100%;
-    display: $display-flex;
-    justify-content: $justify-content-center;
+    display: $display_flex;
+    justify-content: $justify_content_center;
 
     .parent_cont{
-        display: $display-flex;
-        flex-direction: $flex-direction-column;
-        align-items: $align-items-center;
+        display: $display_flex;
+        flex-direction: $flex_direction_column;
+        align-items: $align_items_center;
     }
     
     .nw_count {
         @extend .border_none;
-        color: $theme-color;
+        color: $theme_color;
         padding: 20px;
         font-size: 40px;
         margin-bottom: 15px;
@@ -34,6 +35,6 @@
         padding: 4px 20px 5px 20px;
         font-size: 20px;
         border-radius: 5px;
-        color:$theme-color;    
+        color:$theme_color;    
     }
 }

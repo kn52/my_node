@@ -1,57 +1,28 @@
+@import '../../scss/Colors.scss';
 @import '../../scss/Variables.scss';
 @import '../../scss/Common.scss';
 
 .layout{
     @extend .outline_none;
     @extend .text_decoration_none;
+    justify-content: $justify_content_space_between;
 
     .layout_header{
-        border: 1px solid #ffffff;
-        height:50px;
+        border: 1px solid $color_white;
         padding:10px;
-        display: $display-flex;
-        justify-content: $justify-content-space-between;
-        align-items: $align-items-center;
-        background-color: #ffffff;
+        background-color: $color_white;
+    }
 
-        .link_to {
-            padding: 5px;
-            color: $theme-color;
-            width: 60px;
-            text-align: center;
-            font-weight: 600;
-            font-size: 20px;
-
-            &:hover{
-                @extend .text_decoration_none;
-                @extend .cursor_pointer;
-            }
-        }
-
-        .logout_link_to{
-            padding: 5px;
-            color: #ff0000;
-            width: 60px;
-            text-align: center;
-            font-weight: 600;
-            font-size: 20px;
-
-            &:hover{
-                @extend .text_decoration_none;
-                @extend .cursor_pointer;
-            }
-        }
-
-        .layout_content{
-            @extend .text_decoration_none;
-            padding: 20px 15px;
-            .hello_msg{
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: $theme-color;
-                min-height: 400px;
-            }
+    .layout_content{
+        padding: 20px 15px;
+        @extend .text_decoration_none;
+        
+        .hello_msg{
+            display: $display_flex;
+            align-items: $align_items_center;
+            justify-content: $justify_content_center;
+            color: $theme_color;
+            min-height: 400px;
         }
     }
 }
