@@ -7,25 +7,31 @@ import './Login.scss';
 const Login = () => {
 
   const [password,setPassword] = useState("");
+  const [isPwdValid,setPwdValid] = useState(false);
 
   const handlePassword = async (e) => {
-    await setPassword(e.target.value);
+    setPassword(e.target.value);
+    setPwdValid(false);
   }
 
-  const Login = async () =>{
+  const Login = async (e) =>{
+    if(e.key !== "Enter"){
+      return;
+    }
+
     if(password.trim() !== ""){
       if(AesValidation(password)){
-        await sessionStorage.setItem("password",Encrypt(password));
+        sessionStorage.setItem("password",Encrypt(password));
         window.location.replace("daemon/home");
       }else{
-        alert("Invalid Password");
-        await setPassword("");
+        setPassword("");
+        setPwdValid(true);
       }
     }else{
       alert("Enter Password");
     }
   }
-
+  
   useEffect(()=>{
     if(sessionStorage.getItem("password") !== null){
       window.location.replace("daemon/home");
@@ -34,9 +40,13 @@ const Login = () => {
 
   return (
     <div className="form_main_container">
-      <Paper elevation={5} className="form_child_container">
-        <input type="password" placeholder="Password" value={password} className="password_field" onChange={handlePassword}/>
-        <button onClick={Login} className="login_button">Login</button>
+      <Paper elevation={2} className="form_child_container">
+        <p className="enter_pwd_text">Enter Password</p>
+        <input type="password" placeholder="Password" value={password} className="password_field" onChange={handlePassword} onKeyDown={Login}/>
+        {
+          isPwdValid && <p className="invalid_pwd_text">Invalid Password</p>
+        }
+        {/* <button onClick={Login} className="login_button">Login</button> */}
       </Paper>
     </div>
 

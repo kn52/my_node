@@ -3,16 +3,16 @@ $display_flex:flex;
 
 $flex_direction_row:row;
 $flex_direction_column:column;
-$flex_direction_row_reverse:row_reverse;
-$flex_direction_column_reverse:column_reverse;
+$flex_direction_row_reverse:row-reverse;
+$flex_direction_column_reverse:column-reverse;
 
 $justify_content_center:center;
-$justify_content_flex_start:flex_start;
-$justify_content_flex_end:flex_end;
-$justify_content_space_between:space_between;
-$justify_content_space_around:space_around;
-$justify_content_space_evenly:space_evenly;
+$justify_content_flex_start:flex-start;
+$justify_content_flex_end:flex-end;
+$justify_content_space_between:space-between;
+$justify_content_space_around:space-around;
+$justify_content_space_evenly:space-evenly;
 
 $align_items_center:center;
-$align_items_flex_start:flex_start;
-$align_items_flex_end:flex_end;
+$align_items_flex_start:flex-start;
+$align_items_flex_end:flex-end;

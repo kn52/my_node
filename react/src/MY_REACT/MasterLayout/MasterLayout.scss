@@ -5,8 +5,7 @@
 .layout{
     @extend .outline_none;
     @extend .text_decoration_none;
-    justify-content: $justify_content_space_between;
-
+    
     .layout_header{
         border: 1px solid $color_white;
         padding:10px;
@@ -14,7 +13,7 @@
     }
 
     .layout_content{
-        padding: 20px 15px;
+        padding: 30px 15px;
         @extend .text_decoration_none;
         
         .hello_msg{

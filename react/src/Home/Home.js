@@ -9,25 +9,19 @@ import { Menus } from '../MY_REACT/MenuList/Menus';
 const Home = () => {
 
     const menulist = (Menus.MenuList());
-    
-    const menu = (
-        <Menu className="menu_container">
-            {
-                menulist.map((menu, index) => {
-                    return (index === 1) ?
-                        <>
-                            <MenuItem key={index}><Link to={{ pathname: menu.to, name: menu.prps }} className="link_style">{menu.name}</Link></MenuItem>
-                            <Divider />
-                        </>
-                        :
-                        <>
-                            <Divider />
-                            <MenuItem key={index}><Link to={menu.to} className="link_style">{menu.name}</Link></MenuItem>
-                        </>
-                })
-            }
-        </Menu>
-    );
+    let maplist = menulist.map((menu, index) => {
+        return (index === 1) ?
+            <>
+                <Divider />
+                <MenuItem key={index}><Link to={{ pathname: menu.to, name: menu.prps }} className="link_style">{menu.name}</Link></MenuItem>
+            </>
+            :
+            <>
+                <Divider />
+                <MenuItem key={index}><Link to={menu.to} className="link_style">{menu.name}</Link></MenuItem>
+            </>
+    });
+    const menu = <Menu className="menu_container" style={{}}>{maplist}</Menu>;
 
     const clearStorage = () => sessionStorage.clear();
 
