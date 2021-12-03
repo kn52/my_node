@@ -9,19 +9,21 @@ import { Menus } from '../MY_REACT/MenuList/Menus';
 const Home = () => {
 
     const menulist = (Menus.MenuList());
-    let maplist = menulist.map((menu, index) => {
-        return (index === 1) ?
-            <>
-                <Divider />
-                <MenuItem key={index}><Link to={{ pathname: menu.to, name: menu.prps }} className="link_style">{menu.name}</Link></MenuItem>
-            </>
-            :
-            <>
-                <Divider />
-                <MenuItem key={index}><Link to={menu.to} className="link_style">{menu.name}</Link></MenuItem>
-            </>
-    });
-    const menu = <Menu className="menu_container" style={{}}>{maplist}</Menu>;
+    let menu = <Menu className="menu_container">
+                {
+                    menulist.map((menu, index) => {
+                        return <>
+                                <Divider />
+                                <MenuItem key={index}>
+                                    <Link to={{ pathname: menu.to, data: { dtls: menu.prps } }} className="link_style">
+                                        {menu.name}
+                                    </Link>
+                                </MenuItem>
+                            </>
+                            
+                    })
+                }
+                </Menu>
 
     const clearStorage = () => sessionStorage.clear();
 

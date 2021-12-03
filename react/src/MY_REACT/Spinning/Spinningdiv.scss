@@ -1,0 +1,41 @@
+@import '../../scss/Colors.scss';
+@import '../../scss/Common.scss';
+@import '../../scss/Variables.scss';
+
+.main_container{
+    display: $display_flex;
+    justify-content: $justify_content_center;
+
+    .spin_div_track {
+        background-color: antiquewhite;
+        height: 20px;
+        border-radius: 10px;
+        width: 100%;
+        .spin_div{
+            position: relative;
+            margin-top: -1%;
+            width: 50px;
+            height: 50px;
+            background-color: $theme_color;
+            animation-name: spin;
+            animation-duration: 10000ms;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            animation-delay: 0ms;    
+            animation-direction: alternate-reverse;
+        }
+    }
+
+    @keyframes spin {
+
+        0% {left:-1%}
+        100% {right: 0%; left:100%}
+
+        from {
+            transform:rotate(0deg);
+        }
+        to {
+            transform:rotate(360deg);
+        }
+    }
+}
