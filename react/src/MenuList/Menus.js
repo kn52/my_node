@@ -1,8 +1,8 @@
 export const Menus = {
-    MenuList
+    ReactMenu
 }
 
-function MenuList(){
+function ReactMenu(){
     
     const menuarr = [
         { to: "hellomessage", name: "Hello Message", prps: 'Daemons' },
