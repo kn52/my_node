@@ -16,6 +16,7 @@ import React_Parent_Render from '../MY_REACT/Rendering/React_Parent_Render';
 import PwaHome from '../MY_REACT/PWA/PwaHome';
 import MasterLayout from '../MY_REACT/MasterLayout/MasterLayout';
 import { Spinningdiv } from '../MY_REACT/Spinning/Spinnigdiv';
+import ReactSelect_Dropdown from '../MY_REACT/ReactSelect_Dropdown/ReactSelect_Dropdown';
 
 export const ChildRoute = (props) => {
 
@@ -39,6 +40,7 @@ export const ChildRoute = (props) => {
             <PrivateRoute path={`${match.url}/reactrender`} exact component={React_Parent_Render} />
             <PrivateRoute path={`${match.url}/pwahome`} exact component={PwaHome} />
             <PrivateRoute path={`${match.url}/spindiv`} exact component={Spinningdiv} />
+            <PrivateRoute path={`${match.url}/reactselectdropdown`} exact component={ReactSelect_Dropdown} />
         </MasterLayout>
     );
 }

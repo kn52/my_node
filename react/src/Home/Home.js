@@ -2,12 +2,10 @@ import './Home.scss';
 import Dropdown from 'rc-dropdown';
 import Menu, { Item as MenuItem, Divider } from 'rc-menu';
 import 'rc-dropdown/assets/index.css';
-import '../';
 import { Link } from 'react-router-dom';
 import { Menus } from '../MenuList/Menus';
 
 const Home = () => {
-
     let reactmenu = <Menu className="menu_container">
                 {
                     Menus.ReactMenu().map((menu, index) => {
