@@ -8,26 +8,19 @@ import { Menus } from '../MenuList/Menus';
 const Home = () => {
     const history = useHistory();
 
-    const redirectTo = (menu) => {
-        history.push({
-            pathname: menu.to, 
-            data: { dtls: menu.prps }
-        })
-    }
-
     let reactmenu = <Menu className="menu_container">
-                {
-                    Menus.ReactMenu().map((menu, index) => {
-                        return <>
-                                <Divider />
-                                <MenuItem key={index} onClick={ () => redirectTo(menu)} className="menu_option_name">
-                                    <span>{menu.name}</span>
-                                </MenuItem>
-                            </>
-                            
-                    })
-                }
-                </Menu>
+        {
+            Menus.ReactMenu().map((menu, index) => {
+                return <>
+                    <Divider />
+                    <MenuItem key={index} onClick={() => history.push({ pathname: menu.to, data: { dtls: menu.prps } })} className="menu_option_name">
+                        <span>{menu.name}</span>
+                    </MenuItem>
+                </>
+
+            })
+        }
+    </Menu>
 
     const clearStorage = () => sessionStorage.clear();
 
