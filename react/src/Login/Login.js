@@ -46,7 +46,6 @@ const Login = () => {
         {
           isPwdValid && <p className="invalid_pwd_text">Invalid Password</p>
         }
-        {/* <button onClick={Login} className="login_button">Login</button> */}
       </Paper>
     </div>
 

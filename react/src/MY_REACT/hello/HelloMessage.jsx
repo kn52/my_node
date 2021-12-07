@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import './HelloMessage.scss';
 
 export default function HelloMessage(props) {
@@ -7,10 +7,6 @@ export default function HelloMessage(props) {
 
   const txtNumber = async (num) => await setTxtNum(num);
 
-  useEffect(()=>{
-    // localStorage.getItem("password") === null && window.location.replace("/"); 
-  })
-
   return(
     <>
       <h1>
@@ -18,7 +14,7 @@ export default function HelloMessage(props) {
           Hey
         </span>
         <span className={txtNum === "1" ? "h_d under_line" : "h_d under_line_none"} onClick={() => txtNumber("1")}>
-            {props.location.hasOwnProperty("data") ? <>{props.location.data.dtls}!</> : "Stranger...!"}
+            {props.location.hasOwnProperty(process.env.REACT_APP_PROPS_KEY) ? <>{props.location.data.dtls}!</> : "Stranger...!"}
         </span>
         <span className={txtNum === "2" ? "h_d under_line" : "h_d under_line_none"} onClick={() => txtNumber("2")}>
             Welcome Back

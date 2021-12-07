@@ -1,18 +1,16 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 export default function Hello(props) {
-  useEffect(()=>{
-    // localStorage.getItem("password") === null && window.location.replace("/"); 
-  })
-  if (props.name) {
+  
+  if (props.location.hasOwnProperty(process.env.REACT_APP_PROPS_KEY)) {
     return(
       <>
-        <div><Home/></div>
-        <h1>Hello, {props.name}!</h1>
+        <h1>Hello, {props.location.data.dtls}!</h1>
       </> 
     ) 
     
-  } else {
+  } 
+  else {
     return(
       <>
         <h1>

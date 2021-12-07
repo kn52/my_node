@@ -5,14 +5,19 @@ import './MasterLayout.scss';
 
 export class MasterLayout extends React.Component {
 
+    constructor(props) { 
+        super(props);
+        !sessionStorage.getItem("password") && window.location.replace('/') 
+    }
+
     render() {
         const { children } = this.props; 
-        
+
         return (
             <AUX_EXP>
                 <div className="layout">
                     <div className="layout_header">
-                        <Home /> 
+                        <Home/>
                     </div>
                     <div className="layout_content">
                         {

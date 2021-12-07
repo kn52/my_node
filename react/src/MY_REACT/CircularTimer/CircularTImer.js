@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import "./CircularTimer.scss";
 
@@ -16,10 +16,6 @@ function CircularTimer () {
             </div>
         );
     };
-
-    useEffect(()=>{
-        // localStorage.getItem("password") === null && window.location.replace("/"); 
-    })
     
     return (
         <>
