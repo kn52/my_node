@@ -19,7 +19,8 @@
         transition: 0.2s;
     }
 
-    .not_under_line {
+    .under_line_none {
+        @extend .text_decoration_none;
         background-color: $color_white;
     }
 }

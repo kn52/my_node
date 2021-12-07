@@ -17,7 +17,6 @@ const Home = () => {
                         <span>{menu.name}</span>
                     </MenuItem>
                 </>
-
             })
         }
     </Menu>
