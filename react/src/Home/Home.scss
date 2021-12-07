@@ -64,6 +64,23 @@
 .menu_container{
     height: 400px;
     overflow: auto;
+
+    .menu_option_name{
+        font-size: 12px;
+
+        &:hover {
+            background-color: $theme_color;
+            color: $theme_color;
+            font-size: 15px;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+        &:nth-child(n) {
+            @extend .text_decoration_none;
+            @extend .cursor_pointer;
+        } 
+    }
+
     &::-webkit-scrollbar{
         width: 10px;
         background-color: $color_white;

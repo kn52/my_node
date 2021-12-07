@@ -15,7 +15,9 @@ export default function Hello(props) {
   } else {
     return(
       <>
-        <h1>Hey, Stranger...</h1>
+        <h1>
+          <Span className="underline_style">Hey,</Span>&nbsp;<Span className="underline_style">Stranger...</Span>
+        </h1>
       </>
     ) 
   }

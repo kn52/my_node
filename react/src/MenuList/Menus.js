@@ -20,6 +20,7 @@ function ReactMenu(){
         { to: "reactrender", name: "Render of React Elements", prps: null },
         { to: "spindiv", name: "Spinnig div", prps: null },
         { to: "reactselectdropdown", name: "ReactSelect_Dropdown", prps: null },
+        { to: "reactdragmenu", name: "ReactDragMenu", prps: null },
         // { to: "pwahome", name: "Pwa Home", prps: null },
     ];
 

@@ -1,0 +1,93 @@
+@import '../../scss/Colors.scss';
+@import '../../scss/Common.scss';
+@import '../../scss/Variables.scss';
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    :root{
+        --clr: #222327
+    }
+    .navigation {
+        width: 400px;
+        height: 60px;
+        background-color: #fff;
+        border-radius: 10px;
+        display: $display_flex;
+        justify-content: $justify_content_center;
+        align-items: $justify_content_flex_start;
+
+        ul {
+            display: $display_flex;
+            justify-content: $justify_content_center;
+            align-items: $align_items_center;
+            padding: 0;
+            background-color: aliceblue;
+
+            li {
+                list-style: none;
+                padding: 0px 10px;
+                width:60px;
+                z-index: 1;
+                a {
+                    display: $display_flex;
+                    flex-direction: $flex_direction_column;
+                    justify-content: $justify_content_center;
+                    align-items: $align_items_center;
+                    width: 100%;
+                    text-align: center;
+                    font-weight: 600;
+
+                    .icon {
+                        display: $display_flex;
+                        display: block;
+                        line-height: 75px;
+                        font-size: 1.5rem;
+                        text-align: center;
+                        transition: 0.5s;
+                        color: var(--clr)
+                    }
+
+                    .text {
+                        position: absolute;
+                        color: var(--clr);
+                        letter-spacing: 0.05em;
+                        font-size: 0.75em;
+                        transition: 0.5s;
+                        opacity: 0;
+                        transform: translateY(20px);
+                    }
+                }
+
+                &:hover {
+                    a {
+                        .icon {
+                           transform: translateY(-7px);
+                        }
+
+                        .text {
+                            opacity: 1;
+                            transform: translateY(10px);
+                        }
+                    }   
+                }
+            }
+
+            .indicator{
+                position: absolute;
+                top: -50%;
+                border: 6px solid var(--clr);
+                background-color: aqua;
+                transition: 0.5s;
+
+                &::before{
+                    position: absolute;
+                    top: 0;
+                    width:20px;
+                    height: 20px;
+                }
+            }
+        }
+    }
+}

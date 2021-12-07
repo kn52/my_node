@@ -1,0 +1,25 @@
+@import '../../scss/Colors.scss';
+@import '../../scss/Common.scss';
+@import '../../scss/Variables.scss';
+
+*{
+    .h_d {
+        padding: 5px 15px;
+        margin: 0 10px;
+        border-radius: 5px;
+        
+        &:hover {
+            @extend .cursor_pointer;
+        }
+    }
+
+    .under_line {
+        color: $color_white;
+        background-color: $theme_color;
+        transition: 0.2s;
+    }
+
+    .not_under_line {
+        background-color: $color_white;
+    }
+}
