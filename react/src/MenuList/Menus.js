@@ -21,6 +21,7 @@ function ReactMenu(){
         { to: "spindiv", name: "Spinnig div", prps: null },
         { to: "reactselectdropdown", name: "ReactSelect_Dropdown", prps: null },
         { to: "reactdragmenu", name: "ReactDragMenu", prps: null },
+        { to: "customradio", name: "Custom Radio", prps: null },
         // { to: "pwahome", name: "Pwa Home", prps: null },
     ];
 

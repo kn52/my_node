@@ -18,17 +18,13 @@ class Check_Box extends React.Component{
     render(){
         return (
             <>
-                <div className="checkbox_main_container">
-                    <div className='custom_control custom_switch'>
-                        <label className="custom_random_switch_label">{this.state.isChecked ? "Active" : "InActive"}</label>
-                        <input
-                            type='checkbox'
-                            className='custom_control_input'
-                            id="isChecked"
-                            checked={this.state.isChecked === true}
-                            onClick={this.handleSwitchChange}
-                        />
-                        <label className='custom_control_label' htmlFor="isChecked" style={{ color: 'black' }}></label>
+                <div className="main_div">
+                    <div className="without_label_container">
+                        <input type="checkbox" name="check_test?" className="che_ck" />
+                    </div>
+                    <div className="with_label_container">
+                        <input type="checkbox" id="custom_check" name="check_test??" className="che_ck" />
+                        <label htmlFor="custom_check" className="checkbox_label_style"></label>
                     </div>
                 </div>
             </>

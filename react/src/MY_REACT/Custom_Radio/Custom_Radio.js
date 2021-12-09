@@ -1,6 +1,7 @@
 import React from "react";
-import './DemoApp.scss';
-class DemoApp extends React.Component{
+import './Custom_Radio.scss';
+
+class Custom_Radio extends React.Component{
     
     render(){
         return(
@@ -11,7 +12,7 @@ class DemoApp extends React.Component{
                         <label htmlFor="radio_check"></label>
                     </div>
                     <div className="button_cont">
-                        <button className="button_sts" onClick={() => window.location.replace("/")}>Reset</button>
+                        <button className="button_sts" onClick={() => window.location.replace("customradio")}>Reset</button>
                     </div>
                 </div>
             </>
@@ -20,4 +21,4 @@ class DemoApp extends React.Component{
 
 }
 
-export default DemoApp;
+export default Custom_Radio;
