@@ -9,3 +9,7 @@ export const masterCard = require('./cardlogo/icons8-mastercard.svg').default;
 export const rupay = require('./cardlogo/icons8-rupay.svg').default;
 export const visa = require('./cardlogo/icons8-visa.svg').default;
 export const unionPay = require('./cardlogo/icons8-unionpay.svg').default;
+export const home = require('./header/home.svg').default;
+export const logout = require('./header/logout.svg').default;
+export const user = require('./header/user.svg').default;
+export const react_icon = require('./header/react_icon.svg').default;

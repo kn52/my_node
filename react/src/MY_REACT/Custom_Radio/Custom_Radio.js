@@ -1,8 +1,13 @@
 import React from "react";
 import './Custom_Radio.scss';
+import $ from 'jquery';
 
 class Custom_Radio extends React.Component{
-    
+
+    resetRadio = () => {
+        window.location.replace("customradio");
+    }
+
     render(){
         return(
             <>
@@ -12,7 +17,7 @@ class Custom_Radio extends React.Component{
                         <label htmlFor="radio_check"></label>
                     </div>
                     <div className="button_cont">
-                        <button className="button_sts" onClick={() => window.location.replace("customradio")}>Reset</button>
+                        <button className="button_sts" onClick={() => this.resetRadio()}>Reset</button>
                     </div>
                 </div>
             </>

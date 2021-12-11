@@ -3,18 +3,32 @@
 @import '../../scss/Common.scss';
 
 .layout{
+    height:100vh;
     @extend .outline_none;
     @extend .text_decoration_none;
-    
+    display: $display_flex;
+
+    #main_header, #main_content{
+        @extend .height_hundred;
+    }
+
     .layout_header{
-        border: 1px solid $color_white;
-        padding:10px;
+        border: 1px solid #0000ff20;
+        border-left: none;
+        border-top: none;
+        border-bottom: none;
+        padding:10px 0;
         background-color: $color_white;
+        position: relative;
+        width: 300px;
+        display: $display_flex;
+        flex-direction: $flex_direction_column;
     }
 
     .layout_content{
-        padding: 30px 15px;
+        padding: 15px;
         @extend .text_decoration_none;
+        @extend .width_hundred;
         
         .hello_msg{
             display: $display_flex;

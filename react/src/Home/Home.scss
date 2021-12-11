@@ -2,13 +2,20 @@
 @import '../scss/Variables.scss';
 @import '../scss/Common.scss';
 
-
 .home_main{
 
     @extend .width_hundred;
-    display: $display_flex;
-    align-items: $align_items_center;
-    justify-content: $justify_content_space_between;
+    height: 90%;
+
+    .menu_content{
+        display: $display_flex;
+        flex-direction: $flex_direction_column;
+    }
+
+    .logout_content {
+        position: fixed;
+        bottom: 15px;
+    }
 
     .main_style {
         color: $theme_color ;
@@ -27,10 +34,10 @@
     .link_to {
         padding: 5px;
         color: $theme_color;
-        width: 60px;
-        text-align: center;
+        text-align: left;
         font-weight: 600;
-        font-size: 20px;
+        font-size: 22px;
+        @extend .width_hundred;
     
         &:hover{
             @extend .text_decoration_none;
@@ -41,11 +48,11 @@
     .logout_link_to{
         padding: 5px;
         color: $color_red;
-        width: 60px;
-        text-align: center;
+        text-align: left;
         font-weight: 600;
-        font-size: 20px;
-    
+        font-size: 22px;
+        @extend .width_hundred;
+
         &:hover{
             @extend .text_decoration_none;
             @extend .cursor_pointer;
@@ -56,8 +63,48 @@
         @extend .main_style;
         @extend .cursor_pointer;
         @extend .button_sts;
-    
         background-color: $color_white;
+    }
+
+    .dropdown_content{
+        position: absolute;
+        z-index: 1001;
+        left: 79px;
+        height: 350px;
+        border: none;
+        overflow: auto; 
+        background-color: $color_white; 
+        box-shadow: 0px 2px 8px 0px #0000ff20; 
+
+        & > p {
+            font-size: 15px;
+            color: $theme_color;
+            padding: 5px 10px;
+            margin: 0;
+        }
+
+        &::-webkit-scrollbar{
+            width: 10px;
+            background-color: $color_white;
+        }
+          
+        &::-webkit-scrollbar-track {
+            background-color: $color_white;
+        }
+          
+        &::-webkit-scrollbar-thumb {
+            background-color:#0000ff20;
+            border-radius: 5px;
+        }
+    
+        &::-webkit-scrollbar-thumb:hover{
+                border-radius: 5px;
+                background-color: #0000ff20;
+        }
+          
+        &::-webkit-scrollbar-button{
+            display: none;
+        }
     }
 }
 
@@ -80,28 +127,49 @@
             @extend .cursor_pointer;
         } 
     }
+}
 
-    &::-webkit-scrollbar{
-        width: 10px;
-        background-color: $color_white;
-      }
-      
-      &::-webkit-scrollbar-track {
-        background-color: $color_white;
-      }
-      
-      &::-webkit-scrollbar-thumb {
-        background-color:#33b6e580;
-        border-radius: 5px;
-      }
+* {
+    .menu_content_user {
+        display: $display_flex;
+        justify-content: $justify_content_center;
+        margin-bottom: 25px;
 
-      &::-webkit-scrollbar-thumb:hover{
-            border-radius: 5px;
-            background-color: #33b5e580;
-      }
-      
-      &::-webkit-scrollbar-button{
-        display: none;
-      }
+        .menu_content_user_image_cont {
+            width: 130px;
+            height: 130px;
+            border: 1px solid #33b5e512;
+            background-color: #33b5e512;
+            border-radius: 65px;
+            display: $display_flex;
+            justify-content: $justify_content_center;
+            align-items: $align_items_center;
+        }
 
+        .menu_content_user_image {
+            width: 100px;
+            height: 100px;
+        }
+    }
+    
+    .menu_content_list {
+        display: $display_flex;
+        align-items: $align_items_center;
+        padding: 0 10px;
+        margin-bottom: 10px;
+        overflow: hidden;   
+        @extend .cursor_pointer;
+    
+        .menu_content_icon{
+            width: 40px;
+            height: 40px;
+            margin-right: 15px;
+        }
+    
+        .menu_content_text{
+            outline: none;
+            padding-left: 5px;
+            display: block;
+        }
+    }
 }

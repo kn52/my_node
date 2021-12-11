@@ -16,10 +16,10 @@ export class MasterLayout extends React.Component {
         return (
             <AUX_EXP>
                 <div className="layout">
-                    <div className="layout_header">
+                    <div id="main_header" className="layout_header">
                         <Home/>
                     </div>
-                    <div className="layout_content">
+                    <div id="main_content" className="layout_content">
                         {
                             window.location.href.trim().toLowerCase().includes("home") ?
                                 <div className="hello_msg">
