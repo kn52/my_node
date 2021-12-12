@@ -1,3 +1,7 @@
+@import '../../scss/Colors.scss';
+@import '../../scss/Common.scss';
+@import '../../scss/Variables.scss';
+
 .main_div
 {
     width: 100%;
@@ -62,19 +66,19 @@
             border-radius: 50%;
             top:0%;
             right:0%;
-            background: #33b5e5;
+            background: $theme_color;
             transform: scale(0.7);
-            box-shadow: 0 2px 5px #33b5e520;
+            box-shadow: 0 2px 5px #0000ff50;
         }
     }
 }
 
 //width label
 .with_label_container{
-    border: 1px solid #ff0000;
+    border: 3px solid #0000ff50;
     width:80px;
-    border-radius: 15px;
-    height: 32px;
+    border-radius: 18px;
+    height: 36px;
 
     .checkbox_label_style {
         position: relative;
@@ -148,12 +152,12 @@
             height: 25px;
             border: 1px solid gray;
             position: absolute;
-            left: 50px;
+            left: 45px;
             top: 2.2px;
             opacity: 1;
             -webkit-transition: all 0.12s, border-color 0.08s;
             transition: all 0.12s, border-color 0.08s;
-            background: green;
+            background: $theme_color;
             border-radius: 50%;
         }
     }
