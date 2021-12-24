@@ -1,6 +1,6 @@
-import DemoApp from './DemoApp/DemoApp';
+import AppDemo from './AppDemo';
 import { ParentRoute } from './Routes/ParentRoute';
 
 export const App = () => <ParentRoute/>;
 
-// export const App = () => <DemoApp/>;
+// export const App = () => <AppDemo/>;

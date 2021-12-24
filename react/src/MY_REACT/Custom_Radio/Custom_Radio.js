@@ -1,7 +1,5 @@
 import React from "react";
 import './Custom_Radio.scss';
-import $ from 'jquery';
-
 class Custom_Radio extends React.Component{
 
     resetRadio = () => {
