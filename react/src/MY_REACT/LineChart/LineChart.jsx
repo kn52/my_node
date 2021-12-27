@@ -114,11 +114,10 @@ const LineChart = () => <>
         <div><CanvasJSChart options = {lineOptions}/></div>
         <div><CanvasJSChart options = {splineOptions}/></div>
         <div><CanvasJSChart options = {stepOptions}/></div>
-        <div style={{height:'50px',left:'0',bottom:'0',position:'fixed',background:'red',width:'100%',textAlign:'center',verticalAlign:'center'}}>
-        Footer
+        <div style={{height:'50px',left:'0',bottom:'0',background:'red',width:'100%',textAlign:'center',verticalAlign:'center'}}>
+            Footer
+        </div>
     </div>
-    </div>;
-    
     </>
 
 export default LineChart;

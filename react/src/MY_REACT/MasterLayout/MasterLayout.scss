@@ -20,13 +20,14 @@
         padding:10px 0;
         background-color: $color_white;
         position: relative;
-        width: 300px;
+        width: 40vh;
         display: $display_flex;
         flex-direction: $flex_direction_column;
     }
 
     .layout_content{
         padding: 15px;
+        overflow: auto;
         @extend .text_decoration_none;
         @extend .width_hundred;
         
