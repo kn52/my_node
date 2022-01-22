@@ -13,7 +13,7 @@ export class AppDemoChildClassComponent extends React.Component{
         return (
             <>
                 <div className="withjquery_showmsgdiv">
-                    {this.props.msg}
+                    <span style={{ color: this.props.col }}>{this.props.msg}</span>
                 </div>
             </>
         )
@@ -30,7 +30,7 @@ export const AppDemoChildFunctionComponent = (props) => {
     return (
         <>
             <div className="withjquery_showmsgdiv">
-                {props.msg}
+                <span style={{ color: props.col }}>{props.msg}</span>
             </div>
         </>
     )

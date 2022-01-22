@@ -8,8 +8,8 @@ export default class AppDemoClassComponent extends React.Component{
         super(props);
         this.state={
             childList : [
-                {id:"1",comp: <AppDemoChildClassComponent msg="HI"/> },
-                {id:"2",comp: <AppDemoChildFunctionComponent msg="BYE"/> }
+                {id:"1",comp: <AppDemoChildClassComponent msg="HI!" col="green"/> },
+                {id:"2",comp: <AppDemoChildFunctionComponent msg="BYE..." col="red"/> }
             ]
         }
     }

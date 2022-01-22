@@ -9,8 +9,8 @@ export default class ShowDivWithJquery extends React.Component{
         super(props);
         this.state={
             childList : [
-                {id:"1",comp: <ShowDivWithJqueryChildClassComponent msg="HI!"/> },
-                {id:"2",comp: <ShowDivWithJqueryChildFunctionComponent msg="BYE..."/> }
+                {id:"1",comp: <ShowDivWithJqueryChildClassComponent msg="HI!" col="green"/> },
+                {id:"2",comp: <ShowDivWithJqueryChildFunctionComponent msg="BYE..." col="red"/> }
             ]
         }
     }
