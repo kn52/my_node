@@ -2,8 +2,17 @@ import React from "react";
 import './AppDemo.scss';
 import { adddemoservices } from "./AppDemoServices";
 import $ from 'jquery';
-import { AppDemoChildClassComponent } from "./AppDemoChildComponent";
+import { AppDemoChildClassComponent, AppDemoChildFunctionComponent } from "./AppDemoChildComponent";
 export default class AppDemoClassComponent extends React.Component{
+    constructor(props){
+        super(props);
+        this.state={
+            childList : [
+                {id:"1",comp: <AppDemoChildClassComponent msg="HI"/> },
+                {id:"2",comp: <AppDemoChildFunctionComponent msg="BYE"/> }
+            ]
+        }
+    }
 
     componentDidMount(){
         let msg = adddemoservices.getwelcome() + "class component";
@@ -30,13 +39,16 @@ export default class AppDemoClassComponent extends React.Component{
     }
 
     render(){
+        const { childList } = this.state;
         return(
             <div className='parent_container'>
                 <div id="zxc" className="withjquery_showbutton" onClick={() => this.handleClickOpen()}>
                     show message
                 </div>
                 <div id="child">
-                    <AppDemoChildClassComponent/>
+                    {
+                        childList.map((child)=>(child.comp))
+                    }                    
                 </div>
             </div>
         )

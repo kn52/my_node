@@ -13,14 +13,14 @@ export class AppDemoChildClassComponent extends React.Component{
         return (
             <>
                 <div className="withjquery_showmsgdiv">
-                    Hi
+                    {this.props.msg}
                 </div>
             </>
         )
     }
 }
 
-export const AppDemoChildFunctionComponent = () => {
+export const AppDemoChildFunctionComponent = (props) => {
 
     useEffect(()=>{
         let msg = adddemoservices.getwelcome() + "function child component";
@@ -30,7 +30,7 @@ export const AppDemoChildFunctionComponent = () => {
     return (
         <>
             <div className="withjquery_showmsgdiv">
-                Hi
+                {props.msg}
             </div>
         </>
     )

@@ -1,8 +1,19 @@
 import React from "react";
 import './ShowDivWithJquery.scss';
 import $ from 'jquery';
+import { ShowDivWithJqueryChildClassComponent, ShowDivWithJqueryChildFunctionComponent } from "./ShowDivWithJqueryChild";
 
 export default class ShowDivWithJquery extends React.Component{
+
+    constructor(props){
+        super(props);
+        this.state={
+            childList : [
+                {id:"1",comp: <ShowDivWithJqueryChildClassComponent msg="HI!"/> },
+                {id:"2",comp: <ShowDivWithJqueryChildFunctionComponent msg="BYE..."/> }
+            ]
+        }
+    }
 
     componentDidMount(){
         $(document).on('click', function (e) {
@@ -27,15 +38,16 @@ export default class ShowDivWithJquery extends React.Component{
     }
 
     render(){
+        const { childList } = this.state;
         return(
             <div className='showdiv_withjquery_container'>
                 <div id="zxc" className="withjquery_showbutton" onClick={() => this.handleClickOpen()}>
                     show message
                 </div>
                 <div id="child">
-                    <div className="withjquery_showmsgdiv">
-                        Hi
-                    </div>
+                    {
+                        childList.map((child)=>(child.comp))
+                    } 
                 </div>
             </div>
         )
