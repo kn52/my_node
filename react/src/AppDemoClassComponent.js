@@ -2,6 +2,7 @@ import React from "react";
 import './AppDemo.scss';
 import { adddemoservices } from "./AppDemoServices";
 import $ from 'jquery';
+import { AppDemoChildClassComponent } from "./AppDemoChildComponent";
 export default class AppDemoClassComponent extends React.Component{
 
     componentDidMount(){
@@ -35,9 +36,7 @@ export default class AppDemoClassComponent extends React.Component{
                     show message
                 </div>
                 <div id="child">
-                    <div className="withjquery_showmsgdiv">
-                        Hi
-                    </div>
+                    <AppDemoChildClassComponent/>
                 </div>
             </div>
         )

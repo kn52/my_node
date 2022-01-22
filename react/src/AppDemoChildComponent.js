@@ -5,14 +5,14 @@ import { adddemoservices } from "./AppDemoServices";
 export class AppDemoChildClassComponent extends React.Component{
 
     componentDidMount(){
-        let msg = adddemoservices.getwelcome() + "function child component";
+        let msg = adddemoservices.getwelcome() + "class child component";
         console.log("Welcome Message",msg);
     }
 
     render(){
         return (
             <>
-                <div id="abc" style={{ width: "200px", height: "200px", border: "1px solid" }}>
+                <div className="withjquery_showmsgdiv">
                     Hi
                 </div>
             </>
@@ -29,7 +29,7 @@ export const AppDemoChildFunctionComponent = () => {
 
     return (
         <>
-            <div id="abc" style={{ width: "200px", height: "200px", border: "1px solid" }}>
+            <div className="withjquery_showmsgdiv">
                 Hi
             </div>
         </>
