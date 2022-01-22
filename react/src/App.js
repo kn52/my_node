@@ -1,6 +1,7 @@
-import AppDemo from './AppDemo';
+import AppDemoFunctionComponent from './AppDemoFunctionComponent';
+import AppDemoClassComponent from './AppDemoClassComponent';
 import { ParentRoute } from './Routes/ParentRoute';
 
-export const App = () => <ParentRoute/>;
-
-// export const App = () => <AppDemo/>;
+// export const App = () => <ParentRoute/>;
+export const App = () => <AppDemoClassComponent/>;
+// export const App = () => <AppDemoFunctionComponent/>;
