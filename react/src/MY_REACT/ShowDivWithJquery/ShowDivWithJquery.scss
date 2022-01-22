@@ -1,11 +1,13 @@
 .showdiv_withjquery_container{
-    .withjquery_show {
+    .withjquery_showbutton {
         border: 1px solid red; 
         background-color: red;
         color: white;
         margin-bottom:5px;
         padding: 5px;
         border-radius: 5px;
+        width: max-content;
+        cursor: pointer;
     }
 
     .withjquery_showmsgdiv {

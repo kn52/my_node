@@ -29,7 +29,7 @@ export default class ShowDivWithJquery extends React.Component{
     render(){
         return(
             <div className='showdiv_withjquery_container'>
-                <div id="zxc" className="withjquery_show" onClick={() => this.handleClickOpen()}>
+                <div id="zxc" className="withjquery_showbutton" onClick={() => this.handleClickOpen()}>
                     show message
                 </div>
                 <div id="child">

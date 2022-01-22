@@ -31,11 +31,11 @@ export default class AppDemoClassComponent extends React.Component{
     render(){
         return(
             <div className='parent_container'>
-                <div id="zxc" style={{ width: "200px", border: "1px solid red", backgroundColor: 'red', color: 'white',marginBottom:'5px' }} onClick={() => this.handleClickOpen()}>
+                <div id="zxc" className="withjquery_showbutton" onClick={() => this.handleClickOpen()}>
                     show message
                 </div>
                 <div id="child">
-                    <div id="abc" style={{ width: "200px", height: "200px", border: "1px solid" }}>
+                    <div className="withjquery_showmsgdiv">
                         Hi
                     </div>
                 </div>
