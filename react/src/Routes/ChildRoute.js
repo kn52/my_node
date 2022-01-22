@@ -19,6 +19,7 @@ import { Spinningdiv } from '../MY_REACT/Spinning/Spinnigdiv';
 import ReactSelect_Dropdown from '../MY_REACT/ReactSelect_Dropdown/ReactSelect_Dropdown';
 import ReactDragMenu from '../MY_REACT/ReactDragMenu/ReactDragMenu';
 import Custom_Radio from '../MY_REACT/Custom_Radio/Custom_Radio';
+import ShowDivWithJquery from '../MY_REACT/ShowDivWithJquery/ShowDivWithJquery';
 
 export const ChildRoute = (props) => {
 
@@ -45,6 +46,7 @@ export const ChildRoute = (props) => {
             <PrivateRoute path={`${match.url}/reactselectdropdown`} exact component={ReactSelect_Dropdown} />
             <PrivateRoute path={`${match.url}/reactdragmenu`} exact component={ReactDragMenu}/>
             <PrivateRoute path={`${match.url}/customradio`} exact component={Custom_Radio}/>
+            <PrivateRoute path={`${match.url}/showdivwithjquery`} exact component={ShowDivWithJquery}/>
         </MasterLayout>
     );
 }

@@ -22,6 +22,7 @@ function ReactMenu(){
         { to: "reactselectdropdown", name: "ReactSelect_Dropdown", prps: null },
         { to: "reactdragmenu", name: "ReactDragMenu", prps: null },
         { to: "customradio", name: "Custom Radio", prps: null },
+        { to: "showdivwithjquery", name: "Show Div With Jquery", prps: null },
         // { to: "pwahome", name: "Pwa Home", prps: null },
     ];
 

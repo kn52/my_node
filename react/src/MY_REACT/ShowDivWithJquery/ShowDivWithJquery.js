@@ -1,12 +1,10 @@
 import React from "react";
-import './AppDemo.scss';
-import { adddemoservices } from "./AppDemoServices";
+import './ShowDivWithJquery.scss';
 import $ from 'jquery';
-export default class AppDemoClassComponent extends React.Component{
+
+export default class ShowDivWithJquery extends React.Component{
 
     componentDidMount(){
-        let msg = adddemoservices.getwelcome() + "class component";
-        console.log("Welcome Message",msg);
         $(document).on('click', function (e) {
             var container = $("#child");
             var bool = (container.is(e.target) && container.has(e.target).length === 0) ? true : false;
@@ -30,12 +28,12 @@ export default class AppDemoClassComponent extends React.Component{
 
     render(){
         return(
-            <div className='parent_container'>
-                <div id="zxc" style={{ width: "200px", border: "1px solid red", backgroundColor: 'red', color: 'white',marginBottom:'5px' }} onClick={() => this.handleClickOpen()}>
+            <div className='showdiv_withjquery_container'>
+                <div id="zxc" className="withjquery_show" onClick={() => this.handleClickOpen()}>
                     show message
                 </div>
                 <div id="child">
-                    <div id="abc" style={{ width: "200px", height: "200px", border: "1px solid" }}>
+                    <div className="withjquery_showmsgdiv">
                         Hi
                     </div>
                 </div>
