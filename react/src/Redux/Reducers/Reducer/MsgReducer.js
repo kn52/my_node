@@ -1,3 +1,5 @@
+import { ActionType } from "../../Actions/ActionTypes";
+
 const iState = {
     msg:"Hi"
 }
@@ -5,7 +7,7 @@ const iState = {
 export const MsgReducer = (state = iState, action) => {
     switch(action.type) {
        
-        case "MESSAGE":
+        case ActionType["MsgReducer"].MESSAGE.toString():
             return {
                 ...state,
                 msg: action.payload

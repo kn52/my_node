@@ -19,8 +19,17 @@
     }
 
     .logout_content {
-        position: fixed;
-        bottom: 15px;
+        position: absolute;
+        display: $display_flex;
+        flex-direction: $flex_direction_column;
+        border: 1px solid #0000ff20;
+        background: #fff;
+        left: 65px;
+        top: 41px;
+        width: 335px;
+        color:#0000ff20;
+        border-radius: 5px;
+        box-shadow: 0px 2px 8px 0px #0000ff20; 
     }
 
     .main_style {
@@ -75,7 +84,7 @@
     .dropdown_content{
         position: absolute;
         z-index: 1001;
-        left: 79px;
+        left: 40px;
         height: 350px;
         border: none;
         overflow: auto; 
@@ -121,36 +130,72 @@
         display: $display_flex;
         justify-content: $justify_content_center;
         margin-bottom: 25px;
+        @extend .cursor_pointer;
+
+        .menu_content_user_name{
+            outline:none;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .menu_content_user_logout_cont{
+            outline: none;
+            width: 100%;
+            display: $display_flex;
+            padding-top: 20px;
+        }
+
+        .menu_content_user_image_parent{
+            display: $display_flex;
+
+            .user_image_cont{
+                width:200px;
+            }
+        }
 
         .menu_content_user_image_cont {
-            width: 130px;
-            height: 130px;
+            width: 110px;
+            height: 110px;
             border: 1px solid #33b5e512;
             background-color: #33b5e512;
             border-radius: 65px;
             display: $display_flex;
             justify-content: $justify_content_center;
             align-items: $align_items_center;
+            margin-right: 40px;
+
+            .menu_content_user_img{
+                width: 75px;
+                height: 75px;
+            }
         }
 
         .menu_content_user_image {
-            width: 100px;
-            height: 100px;
+            width: 50px;
+            height: 50px;
+            width:110px;
         }
     }
     
     .menu_content_list {
         display: $display_flex;
         align-items: $align_items_center;
-        padding: 5px 10px;
+        padding: 10px 10px 10px;
         overflow: hidden;   
         @extend .cursor_pointer;
     
         .menu_content_icon{
-            width: 30px;
-            height: 30px;
+            width: 40px;
+            height: 40px;
             margin-right: 15px;
         }
+
+        .menu_content_icon_flex{
+            position: absolute;
+            right: 0;
+            bottom: 10px;
+        }
+        
     
         .menu_content_text{
             outline: none;

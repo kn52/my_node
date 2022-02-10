@@ -10,22 +10,25 @@ class Check_Box extends React.Component{
         }
     }
 
-    handleSwitchChange = () =>{
+    handleSwitchChange = async () =>{
         var isCheck = !this.state.isChecked;
-        this.setState({isChecked:isCheck});
+        await this.setState({isChecked:isCheck});
     }
 
     render(){
         return (
             <>
                 <div className="main_div">
-                    <div className="without_label_container">
+                    {/* <div className="without_label_container">
                         <input type="checkbox" name="check_test?" className="che_ck" />
-                    </div>
+                    </div> */}
                     <div className="with_label_container">
-                        <input type="checkbox" id="custom_check" name="check_test??" className="che_ck" />
+                        <input type="checkbox" id="custom_check" name="check_test??" className="che_ck" checked={this.state.isChecked}/>
                         <label htmlFor="custom_check" className="checkbox_label_style"></label>
                     </div>
+                </div>
+                <div>
+                    <button onClick={this.handleSwitchChange}>Toggle</button>
                 </div>
             </>
         );

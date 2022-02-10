@@ -41,16 +41,11 @@ export default class AppDemoClassComponent extends React.Component{
     render(){
         const { childList } = this.state;
         return(
-            <div className='parent_container'>
-                <div id="zxc" className="withjquery_showbutton" onClick={() => this.handleClickOpen()}>
-                    show message
-                </div>
-                <div id="child">
-                    {
-                        childList.map((child)=>(child.comp))
-                    }                    
-                </div>
-            </div>
+            <>
+            <div className="without_lael_container">
+            <input type="checkbox" name="check_test?" className="che_ck" />
+        </div>
+        </>
         )
     }
 }

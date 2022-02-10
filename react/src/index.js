@@ -4,7 +4,7 @@ import './index.css';
 import { App } from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import store from './Store/Store';
+import store from './Redux/Stores/Store';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const styleLink = document.createElement("link");

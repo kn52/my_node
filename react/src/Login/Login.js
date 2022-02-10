@@ -3,8 +3,13 @@ import React, { useEffect, useState } from "react";
 import AesValidation from "../AESValidation/AesValidation";
 import Encrypt from "../Encryption/Encrypt";
 import './Login.scss';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 const Login = () => {
+
+  const history = useHistory();
+  const dispatch = useDispatch();
 
   const [password,setPassword] = useState("");
   const [isPwdValid,setPwdValid] = useState(false);
@@ -21,8 +26,12 @@ const Login = () => {
 
     if(password.trim() !== ""){
       if(AesValidation(password)){
-        sessionStorage.setItem("password",Encrypt(password));
-        window.location.replace("daemon/home");
+        var encppwd = Encrypt(password);
+        sessionStorage.setItem("password",encppwd);
+        dispatch({type: 'PASSWORD', payload: encppwd})
+        dispatch({type: 'USERNAME', payload: "Daemon"})
+        history.push("daemon/home");
+        // window.location.replace("daemon/home");
       }else{
         setPassword("");
         setPwdValid(true);

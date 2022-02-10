@@ -2,10 +2,11 @@ import React, { useEffect } from "react";
 import './AppDemo.scss';
 import { adddemoservices } from "./AppDemoServices";
 import $ from 'jquery';
-
+var  fls = [];
 export default function AppDemoFunctionComponent() {
 
     const [tab, setTab] = React.useState(1);
+    const [files, setfiles] = React.useState(new FormData());
 
     useEffect(()=>{
         let msg = adddemoservices.getwelcome() + "function component";
@@ -14,7 +15,7 @@ export default function AppDemoFunctionComponent() {
 
     const handlelist = (li_val) => {
         if (li_val < 7 && li_val > 0) {
-            if (tab != li_val) {
+            if (tab !== li_val) {
                 setTab(li_val);
             }
 
@@ -43,6 +44,20 @@ export default function AppDemoFunctionComponent() {
         }
     }
 
+    const filehandler = (e) => {
+        let a = e.target.files;
+        let c = []
+        let b = files;
+        for (let i =0; i< a.length < i++;)
+        {
+            b.push(a[i]);
+            c.push(a[i].name);
+        }
+        fls = c;
+        setfiles(a);
+    }
+    
+
     return (
         <>
            <ul id="ullist">
@@ -65,6 +80,17 @@ export default function AppDemoFunctionComponent() {
                    <div onClick={(e) => handlelist(6)}>F</div>
                 </li>
            </ul>
+           <input type="file" id="files" name="files" onChange={filehandler} multiple/> 
+           <div>
+               {
+                   fls.map((fl,ind) => {
+                       return (
+                        <div key={ind}>
+                            <p> {fl} </p>
+                        </div>)
+                    })
+               }
+           </div>
         </>
     );
 }
