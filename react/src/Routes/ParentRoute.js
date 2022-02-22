@@ -8,8 +8,6 @@ export const ParentRoute = () => <>
     {/* <Router>
         <Route path={["/", "/login"]} exact component={Login} />
         <Route path="/daemon" component={Master} />
-        <Route path={["/"]} exact component={AppDemoClassComponent} />
-        <Route path={["/"]} exact component={AppDemoClassComponent} />
     </Router> */}
     <Router>
         <Route path={["/"]} exact component={AppDemoClassComponent} />

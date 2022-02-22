@@ -23,6 +23,7 @@ function ReactMenu(){
         { to: "reactdragmenu", name: "ReactDragMenu", prps: null },
         { to: "customradio", name: "Custom Radio", prps: null },
         { to: "showdivwithjquery", name: "Show Div With Jquery", prps: null },
+        { to: "customtextbox", name: "Custom Text Box", prps: null },
         // { to: "pwahome", name: "Pwa Home", prps: null },
     ];
 

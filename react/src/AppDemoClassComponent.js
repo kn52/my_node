@@ -19,12 +19,13 @@ export default class AppDemoClassComponent extends React.Component{
     }
 
     render(){
-        const { age,droplist } = this.state;
-
         return(
             <>
-                <div className="with_square">
-                    <input type="checkbox" name="check_test?" className="che_ck" />
+                <div className="with_label_input_content">
+                    <div className="with_label_input">
+                        <input id="txt" type="text" name="text_test?" className="form__input" autoComplete="off" placeholder=" " />
+                        <label className="form__label">Email</label>
+                    </div>
                 </div>
             </>
         )

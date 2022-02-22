@@ -29,6 +29,9 @@ class Check_Box extends React.Component{
                     <div className="with_square">
                         <input type="checkbox" name="check_test?" className="che_ck" />
                     </div>
+                    <div className="with_circle_square">
+                        <input type="checkbox" name="check_test?" className="che_ck" />
+                    </div>
                 </div>
                 <div>
                     <button onClick={this.handleSwitchChange}>Toggle</button>

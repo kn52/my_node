@@ -20,6 +20,7 @@ import ReactSelect_Dropdown from '../MY_REACT/ReactSelect_Dropdown/ReactSelect_D
 import ReactDragMenu from '../MY_REACT/ReactDragMenu/ReactDragMenu';
 import Custom_Radio from '../MY_REACT/Custom_Radio/Custom_Radio';
 import ShowDivWithJquery from '../MY_REACT/ShowDivWithJquery/ShowDivWithJquery';
+import Custom_Text_Box from '../MY_REACT/Custom_Textbox/Custom_Text_Box';
 
 export const ChildRoute = (props) => {
 
@@ -47,6 +48,7 @@ export const ChildRoute = (props) => {
             <PrivateRoute path={`${match.url}/reactdragmenu`} exact component={ReactDragMenu}/>
             <PrivateRoute path={`${match.url}/customradio`} exact component={Custom_Radio}/>
             <PrivateRoute path={`${match.url}/showdivwithjquery`} exact component={ShowDivWithJquery}/>
+            <PrivateRoute path={`${match.url}/customtextbox`} exact component={Custom_Text_Box}/>
         </MasterLayout>
     );
 }

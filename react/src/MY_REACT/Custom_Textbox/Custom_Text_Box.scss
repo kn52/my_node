@@ -1,31 +1,4 @@
-@import './scss/Colors.scss';
-@import './scss/Common.scss';
-@import './scss/Variables.scss';
-
-.parent_container{
-
-    .withjquery_showbutton {
-        border: 1px solid red; 
-        background-color: red;
-        color: white;
-        margin-bottom:5px;
-        padding: 5px;
-        border-radius: 5px;
-        width: max-content;
-        cursor: pointer;
-    }
-
-    .withjquery_showmsgdiv {
-        width: 200px; 
-        padding: 5px;
-        border-radius: 5px;
-        border: 1px solid; 
-        margin-bottom:5px;
-    }
-}
-
 .with_label_input_content{
-    padding: 10px;
     .with_label_input {
         $clr-gray600: #2a324b;   
         $clr-gray300: #161d34;   
