@@ -1,7 +1,6 @@
 import React from "react";
 import './AppDemo.scss';
 import { adddemoservices } from "./AppDemoServices";
-import $ from 'jquery';
 import { AppDemoChildClassComponent, AppDemoChildFunctionComponent } from "./AppDemoChildComponent";
 export default class AppDemoClassComponent extends React.Component{
     constructor(props){
@@ -10,7 +9,7 @@ export default class AppDemoClassComponent extends React.Component{
             childList : [
                 {id:"1",comp: <AppDemoChildClassComponent msg="HI!" col="green"/> },
                 {id:"2",comp: <AppDemoChildFunctionComponent msg="BYE..." col="red"/> }
-            ]
+            ],
         }
     }
 
@@ -20,12 +19,14 @@ export default class AppDemoClassComponent extends React.Component{
     }
 
     render(){
+        const { age,droplist } = this.state;
+
         return(
             <>
-            <div className="without_lael_container">
-            <input type="checkbox" name="check_test?" className="che_ck" />
-        </div>
-        </>
+                <div className="with_square">
+                    <input type="checkbox" name="check_test?" className="che_ck" />
+                </div>
+            </>
         )
     }
 }
