@@ -1,7 +1,7 @@
 $cnt_img: url('./assets/images/angle_arrow_bottom.svg');
 
 
-.dropdown .dropdown_btn {
+.single_multiselect_drop .single_multiselect_drop_btn {
     outline: none;
     padding:10px;
     width: 100%;
@@ -11,11 +11,11 @@ $cnt_img: url('./assets/images/angle_arrow_bottom.svg');
     font-weight: 600;
 }
 
-.dropdown {
+.single_multiselect_drop {
     width: 500px;
     margin: 0 auto;
 
-    .dropdown_content{
+    .single_multiselect_drop_content{
         outline: none;
         padding:3px;
         width: 100%;
@@ -28,7 +28,7 @@ $cnt_img: url('./assets/images/angle_arrow_bottom.svg');
             background-color: #00808020;
         }
     
-        .dropdown_item {
+        .single_multiselect_drop_item {
             display: flex;
             border: 1px solid #eaeaea;
             margin-bottom: 5px;
@@ -130,13 +130,22 @@ $cnt_img: url('./assets/images/angle_arrow_bottom.svg');
     }
 }
 
-.dropdown_btn {
+.single_multiselect_drop_btn {
     display: flex;
     justify-content: space-between;
     cursor: pointer;
     outline: none;
 
-    .dropdown_btn_toggle{
+    .single_multiselect_drop_valueinp {
+        outline: none;
+        width: 95%;
+        border: 1px solid #fff;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .single_multiselect_drop_btn_toggle{
         background-color: #f9f9f9;
         border: 1px solid #ffffff;
         border-radius: 3px;

@@ -7,20 +7,13 @@ export default class AppDemoClassComponent extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            enable: false,
-            selectedlist:[],
-            enableList: [
-                {name:"React",value:"HI HIn knsklazx lknsdk m, mnlkmcx,m kns;dokl,mc kjndlksm, cnklmds, c klmdslkmlkm,x nsk", isenabled: false},
-                {name:"Angular",value:"HI HIn knsklazx lknsdk m, mnlkmcx,m kns;dokl,mc kjndlksm, cnklmds, c klmdslkmlkm,x nsk",isenabled: false},
-                {name:"Vue",value:"HI HIn knsklazx lknsdk m, mnlkmcx,m kns;dokl,mc kjndlksm, cnklmds, c klmdslkmlkm,x nsk",isenabled: false},
-                {name:"Nextjs",value:"HI HIn knsklazx lknsdk m, mnlkmcx,m kns;dokl,mc kjndlksm, cnklmds, c klmdslkmlkm,x nsk",isenabled: false},
-                {name:"Node",value:"HI HIn knsklazx lknsdk m, mnlkmcx,m kns;dokl,mc kjndlksm, cnklmds, c klmdslkmlkm,x nsk",isenabled: false},
-                {name:"Express",value:"HI HIn knsklazx lknsdk m, mnlkmcx,m kns;dokl,mc kjndlksm, cnklmds, c klmdslkmlkm,x nsk",isenabled: false}
-            ],
-            childList : [
-                {id:"1",comp: <AppDemoChildClassComponent msg="HI!" col="green"/> },
-                {id:"2",comp: <AppDemoChildFunctionComponent msg="BYE..." col="red"/> }
-            ],
+            googlelocation: {
+                latitude:"",
+                longitude:"",
+                city:"",
+                state:"",
+                postal:""
+            }
         }
     }
 
@@ -29,58 +22,97 @@ export default class AppDemoClassComponent extends React.Component{
         console.log("Welcome Message",msg);
     }
 
-    handleCheckCLick = async (index) => {
-        const { enableList } = this.state;
-
-        let enableListtemp = enableList;
-        let selectedlisttemp = [];
-        enableListtemp[index].isenabled = !enableListtemp[index].isenabled;
-        for(let tmp_ind=0;tmp_ind<enableListtemp?.length; tmp_ind++){
-            if(enableListtemp[tmp_ind].isenabled){
-                selectedlisttemp.push(enableListtemp[tmp_ind].name)
-            }
+    getgeolocation = async () => {
+        debugger;
+        if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(this.showposition,this.poserror)
         }
-        await this.setState({
-            enableList: enableListtemp,
-            selectedlist: selectedlisttemp
-        });
+    }
+
+    showposition = (pos) => {
+        debugger;
+        let lat = pos.coords.latitude;
+        let long = pos.coords.longitude;
+
+        let obj = this.state.googlelocation;
+
+        obj.latitude = lat;
+        obj.longitude = long;
+        this.setState({googlelocation: obj});
+        this.convertToAddress(lat, long);
+    }
+
+    poserror = () => {
+        debugger;
+        if (navigator.permissions) {
+            navigator.permissions.query({ name: 'geolocation' }).then(res => {
+                if (res.state === 'denied') {
+                    alert('Enable location permissions for this website in your browser settings.')
+                }
+            })
+        } else {
+            alert('Unable to access your location. You can continue by submitting location manually.') 
+        }
+    }
+
+    convertToAddress = (lat, long) => {
+        debugger;
+        // fetch('http://localhost:3000/googlemaps')
+        //     .then(res => res.json())
+        //     .then(obj => this.getAddress(lat, long, obj.api_key));
+        this.getAddress(lat, long, "");
+    }
+
+    getAddress = (lat, long, googleKey) => {
+        debugger;
+        fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${long}&key=${googleKey}`)
+            .then(res => res.json())
+            .then(address => this.setZip(address))
+    }
+
+    setZip = (address) => {
+        debugger;
+        let city = address.results[5].address_components[2].short_name
+        let state = address.results[5].address_components[4].short_name
+        let postal = address.results[5].address_components[0].short_name
+
+        let obj = this.state.googlelocation;
+
+        obj.city = city;
+        obj.state = state;
+        obj.postal = postal;
+        this.setState({googlelocation: obj});
+
+    }
+
+    processManualLocation = () => {
+        // if (props.userState !== "" && props.userCity !== "") {
+            let city = ""
+            let state = ""
+    
+            let url = `https://maps.googleapis.com/maps/api/geocode/json?address=+${city},+${state}&key=${process.env.REACT_APP_googleKey}`
+            fetch(url)
+                .then(res => res.json())
+                .then(res => {
+                    if (res.status === "OK") {
+                        this.getUserCoords(res.results)
+                    } else if (res.status === "ZERO_RESULTS") {
+                        alert('Unable to process this location. Please revise location fields and try submitting again.')
+                    }
+                })
+        // } 
+        // else
+    }
+    
+    getUserCoords = (googleRes) => {
+        let lat = googleRes[0].geometry.location.lat 
+        let long = googleRes[0].geometry.location.lng 
     }
 
     render(){
-        const { enable, enableList, selectedlist } = this.state;
         return(
             <>
-                <div className="dropdown">
-                    <div className="dropdown_btn" onClick={(e) => {this.setState({enable: !enable})}}>
-                        {
-                            selectedlist?.length > 0 ?  selectedlist.join(",") : "Choose a source"
-                        }
-                        <button className="dropdown_btn_toggle"></button>
-                    </div>
-                    {
-                        enable &&
-                        <OutsideClickHandler onOutsideClick={(e)=> this.setState({enable: false})}>
-                            <div className="dropdown_content">
-                                {
-                                    enableList?.length > 0 &&
-                                    enableList?.map((drop_ele, index) => {
-                                        return (
-                                            <div key={index} className={`dropdown_item ${drop_ele["isenabled"] ? "dc_active" : ""}`} onClick={(e) => this.handleCheckCLick(index)}>
-                                                <div className="checkbox_input">
-                                                    <input type="checkbox" checked={drop_ele["isenabled"]}/>
-                                                </div>
-                                                <div className='checkbox_text'>
-                                                    {drop_ele["name"]}
-                                                    <p>{drop_ele["value"]}</p>
-                                                </div>
-                                            </div>
-                                        )
-                                    })
-                                }
-                            </div>
-                        </OutsideClickHandler>
-                    }
-                    </div>
+                <button onClick={(e)=> this.getgeolocation()}>button</button>
             </>
         )
     }
