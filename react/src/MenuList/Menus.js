@@ -24,6 +24,7 @@ function ReactMenu(){
         { to: "customradio", name: "Custom Radio", prps: null },
         { to: "showdivwithjquery", name: "Show Div With Jquery", prps: null },
         { to: "customtextbox", name: "Custom Text Box", prps: null },
+        { to: "googlelocation", name: "Google Location", prps: null },
         // { to: "pwahome", name: "Pwa Home", prps: null },
     ];
 

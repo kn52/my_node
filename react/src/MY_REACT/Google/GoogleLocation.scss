@@ -1,0 +1,47 @@
+.checkbox_container{
+    display: flex;
+    margin-bottom: 15px;
+
+    .checkbox_content{
+        display: flex;
+        justify-content: flex-start;
+        align-items: baseline;
+        width:100px;
+        margin-right: 5px;
+
+        input[type="checkbox"]{
+            margin-right: 10px;
+            cursor: pointer;
+        }
+    }
+}
+
+.button_container{
+    display: flex;
+    margin-bottom: 15px;
+
+    button {
+        padding: 10px;
+        border-radius: 5px;
+        width: 170px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        background-color: #33b5e5;
+    }
+}
+
+.hr_style {
+    width: 300px;
+    border: 1px solid #33b5e5;
+    margin-bottom: 15px;
+}
+
+.location_container{
+    width:300px;
+
+    .location_content {
+        width: 100%;
+        display: flex;
+    }
+}
