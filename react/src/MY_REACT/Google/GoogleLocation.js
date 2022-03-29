@@ -114,8 +114,8 @@ export default class GoogleLocation extends React.Component{
 
     processManualLocation = (userState,userCity) => {
         if (userState !== "" && userCity !== "") {
-            let city = ""
-            let state = ""
+            let city = userState;
+            let state = userCity;
     
             let url = `https://maps.googleapis.com/maps/api/geocode/json?address=+${city},+${state}&key=${process.env.REACT_APP_googleKey}`
             fetch(url)
@@ -132,6 +132,7 @@ export default class GoogleLocation extends React.Component{
     }
     
     getUserCoords = (googleRes) => {
+        debugger;
         let lat = googleRes[0].geometry.location.lat 
         let long = googleRes[0].geometry.location.lng 
     }
