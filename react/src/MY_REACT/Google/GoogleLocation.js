@@ -61,7 +61,6 @@ export default class GoogleLocation extends React.Component{
     }
 
     showposition = (pos) => {
-        debugger;
         let lat = pos.coords.latitude;
         let long = pos.coords.longitude;
 
@@ -74,7 +73,6 @@ export default class GoogleLocation extends React.Component{
     }
 
     poserror = () => {
-        debugger;
         if (navigator.permissions) {
             navigator.permissions.query({ name: 'geolocation' }).then(res => {
                 if (res.state === 'denied') {
@@ -87,15 +85,13 @@ export default class GoogleLocation extends React.Component{
     }
 
     convertToAddress = (lat, long) => {
-        debugger;
         // fetch('http://localhost:3000/googlemaps')
         //     .then(res => res.json())
         //     .then(obj => this.getAddress(lat, long, obj.api_key));
-        this.getAddress(lat, long, "");
+        this.getAddress(lat, long, "AIzaSyDIETGixd8oOfXRAJdnO_IOlzRVWqqSYmw");
     }
 
     getAddress = (lat, long, googleKey) => {
-        debugger;
         fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${long}&key=${googleKey}`)
             .then(res => res.json())
             .then(address => this.setZip(address))
@@ -103,9 +99,9 @@ export default class GoogleLocation extends React.Component{
 
     setZip = (address) => {
         debugger;
-        let city = address.results[5].address_components[2].short_name
-        let state = address.results[5].address_components[4].short_name
-        let postal = address.results[5].address_components[0].short_name
+        let city = address.results[5].address_components[2]?.short_name 
+        let state = address.results[5].address_components[4]?.short_name
+        let postal = address.results[5].address_components[0]?.short_name
 
         let obj = this.state.googlelocation;
 

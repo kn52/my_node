@@ -1,0 +1,22 @@
+.button_hover{
+    width: 20px;
+    height: 20px;
+    -webkit-mask-size: 26px 1010px;
+    -webkit-mask-position: 0px -968px;
+
+    &:hover {
+        + div {
+            visibility: visible;
+        }
+    }
+}
+
+.mask_over {
+    display: none;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00000020;
+    visibility: hidden;
+}
