@@ -4,6 +4,8 @@ import { adddemoservices } from "./AppDemoServices";
 import { AppDemoChildClassComponent, AppDemoChildFunctionComponent } from "./AppDemoChildComponent";
 import OutsideClickHandler from 'react-outside-click-handler';
 import { Link } from "@material-ui/core";
+import axios from 'axios';
+// import publicIp from 'public-ip';
 
 export const data = {
     e_dt: {
@@ -29,10 +31,19 @@ export default class AppDemoClassComponent extends React.Component{
         }
     }
 
-    componentDidMount(){
+    async componentDidMount(){
         let msg = adddemoservices.getwelcome() + "class component";
         console.log("Welcome Message",msg);
-        this.setMsg();
+        this.getIP();
+    }
+
+    getIP = async () => {
+        fetch('https://api.ipify.org/?format-json')
+            .then((results) => results.json())
+            .then((data) => {
+                debugger;
+                console.log(data)
+                })
     }
 
     setMsg = () => {

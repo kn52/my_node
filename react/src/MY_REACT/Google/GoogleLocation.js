@@ -1,6 +1,8 @@
 import React from "react";
 import './GoogleLocation.scss';
 
+const gog_key = "AIzaSyDIETGixd8oOfXRAJdnO_IOlzRVWqqSYmw";
+
 export default class GoogleLocation extends React.Component{
     constructor(props){
         super(props);
@@ -113,14 +115,16 @@ export default class GoogleLocation extends React.Component{
     }
 
     processManualLocation = (userState,userCity) => {
+        debugger;
         if (userState !== "" && userCity !== "") {
             let city = userState;
             let state = userCity;
     
-            let url = `https://maps.googleapis.com/maps/api/geocode/json?address=+${city},+${state}&key=${process.env.REACT_APP_googleKey}`
+            let url = `https://maps.googleapis.com/maps/api/geocode/json?address=+${city},+${state}&key=${gog_key}`
             fetch(url)
                 .then(res => res.json())
                 .then(res => {
+                    debugger
                     if (res.status === "OK") {
                         this.getUserCoords(res.results)
                     } else if (res.status === "ZERO_RESULTS") {
@@ -162,8 +166,10 @@ export default class GoogleLocation extends React.Component{
                     {
                         googlelocationtype.manuallocation &&
                         <>
-                            <input type="text" value={userCity} onChange={(e) => this.setState({ userCity: e.target.value })} />
-                            <input type="text" value={userState} onChange={(e) => this.setState({ userState: e.target.value })} />
+                            City:&nbsp;<input type="text" value={userCity} onChange={(e) => this.setState({ userCity: e.target.value })} />
+                            <br/>
+                            State:&nbsp;<input type="text" value={userState} onChange={(e) => this.setState({ userState: e.target.value })} />
+                            <br/>
                             <button onClick={(e) => this.processManualLocation(userState,userCity)}>Get manual Location</button>
                         </>
                     }
