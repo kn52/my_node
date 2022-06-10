@@ -1,22 +1,23 @@
-.button_hover{
-    width: 20px;
-    height: 20px;
-    -webkit-mask-size: 26px 1010px;
-    -webkit-mask-position: 0px -968px;
+.outer_container{
+    width: 500px;
+    height: 500px;
+    overflow: auto;
+    background-color: yellow;
 
-    &:hover {
-        + div {
-            visibility: visible;
+    .inner_container{
+        width:200px;
+        height: 9000px;
+        background-color: green;
+
+        &:hover {
+            div[class="ab_container"]{
+                display: block;
+            }
+
+            .ab_container{
+                display: none;
+                background-color: red;
+            }
         }
     }
-}
-
-.mask_over {
-    display: none;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #00000020;
-    visibility: hidden;
 }

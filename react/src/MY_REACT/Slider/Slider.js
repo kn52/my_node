@@ -41,6 +41,25 @@ const PrettoSlider = withStyles({
   },
 })(Slider);
 
+const marks = [
+  {
+    value: 0,
+    label: '0°C',
+  },
+  {
+    value: 20,
+    label: '20°C',
+  },
+  {
+    value: 37,
+    label: '37°C',
+  },
+  {
+    value: 100,
+    label: '100°C',
+  },
+];
+
 export default function CustomizedSlider() {
   const [value, setValue] = React.useState(2);
   const handleChange = (event, newValue) => {
@@ -50,7 +69,7 @@ export default function CustomizedSlider() {
   return (
     <>
       <div style={{ marginTop: '90px', width: '900px', padding: '20px' }}>
-        <PrettoSlider valueLabelDisplay="on" aria-label="pretto slider" defaultValue={20} />
+        <PrettoSlider valueLabelDisplay="on" aria-label="pretto slider" defaultValue={20} step={null} marks={marks}/>
         <Paper square>
       <Tabs
         value={value}
