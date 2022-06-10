@@ -1,8 +1,7 @@
 const btn_ele = document.getElementById("btn");
 
 
-btn_ele.click = () => {
-    // alert("hi")
+btn_ele.onclick = () => {
     displaytable(table_records);
 }
 
