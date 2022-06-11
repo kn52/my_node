@@ -25,6 +25,7 @@ function ReactMenu(){
         { to: "showdivwithjquery", name: "Show Div With Jquery", prps: null },
         { to: "customtextbox", name: "Custom Text Box", prps: null },
         { to: "googlelocation", name: "Google Location", prps: null },
+        { to: "customtable", name: "Custom Table", prps: null },
         // { to: "pwahome", name: "Pwa Home", prps: null },
     ];
 

@@ -22,6 +22,7 @@ import Custom_Radio from '../MY_REACT/Custom_Radio/Custom_Radio';
 import ShowDivWithJquery from '../MY_REACT/ShowDivWithJquery/ShowDivWithJquery';
 import Custom_Text_Box from '../MY_REACT/Custom_Textbox/Custom_Text_Box';
 import GoogleLocation from '../MY_REACT/Google/GoogleLocation';
+import Custom_Table from '../MY_REACT/Custom_Table/Custom_Table';
 
 export const ChildRoute = (props) => {
 
@@ -51,6 +52,7 @@ export const ChildRoute = (props) => {
             <PrivateRoute path={`${match.url}/showdivwithjquery`} exact component={ShowDivWithJquery}/>
             <PrivateRoute path={`${match.url}/customtextbox`} exact component={Custom_Text_Box}/>
             <PrivateRoute path={`${match.url}/googlelocation`} exact component={GoogleLocation}/>
+            <PrivateRoute path={`${match.url}/customtable`} exact component={Custom_Table}/>
         </MasterLayout>
     );
 }

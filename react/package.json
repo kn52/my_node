@@ -17,6 +17,7 @@
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
     "enzyme-to-json": "^3.6.1",
+    "google-currency": "^1.0.7",
     "iin-checker": "^0.6.0",
     "jest-cli": "^26.6.3",
     "jquery": "^3.6.0",
