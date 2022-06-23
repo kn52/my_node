@@ -26,6 +26,10 @@ function ReactMenu(){
         { to: "customtextbox", name: "Custom Text Box", prps: null },
         { to: "googlelocation", name: "Google Location", prps: null },
         { to: "customtable", name: "Custom Table", prps: null },
+        { to: "calenderheatmap", name: "Calender Heatmap", prps: null },
+        { to: "videofileuploadtobytes", name: "Video File Upload To Bytes", prps: null },
+        { to: "fileuploadtoarray", name: "File Upload To Array", prps: null },
+        { to: "fileuploadtoformdata", name: "File Upload To FormData", prps: null },
         // { to: "pwahome", name: "Pwa Home", prps: null },
     ];
 

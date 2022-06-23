@@ -1,90 +1,57 @@
+import * as React from 'react'
+import './DemoComponent.scss';
+import CalendarHeatmap from 'react-calendar-heatmap';
+import ReactTooltip from 'react-tooltip';
+import 'react-calendar-heatmap/dist/styles.css';
 
-import React from 'react';
-import { Table } from 'semantic-ui-react';
-import './DemoComponent.scss'
-import { Convert } from 'easy-currencies';
+export default function DemoComponent() {
 
-class DemoComponent extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      inrvalue: ""
-    }
+  const today = new Date();
+
+  const shiftDate = (date, numDays) => {
+    const newDate = new Date(date);
+    newDate.setDate(newDate.getDate() + numDays);
+    return newDate;
+  }
+  
+  const getRange = (count) => {
+    return Array.from({ length: count }, (_, i) => i);
+  }
+  
+  const getRandomInt = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-  componentDidMount() {
+  const randomValues = getRange(200).map(index => {
+    return {
+      date: shiftDate(today, -index),
+      count: getRandomInt(1, 3),
+    };
+  });
 
-    const options = {
-      from: "USD",
-      to: "INR",
-      amount: 1
-    }
-
-    debugger
-    const pp = Convert(options.amount).from(options.from).to(options.to);
-    pp.then((value)=>{
-      alert(value);
-      this.setState({inrvalue: value})
-    })
-    
-  }
-
-
-  render = () => {
-
-    const { inrvalue } = this.state;
-    return (
-      <div>
-        <Table className='table_custom'>
-          <Table.Header>
-            <Table.Row>
-              <Table.HeaderCell>H1</Table.HeaderCell>
-              <Table.HeaderCell>H2</Table.HeaderCell>
-              <Table.HeaderCell>H3</Table.HeaderCell>
-              <Table.HeaderCell>H4</Table.HeaderCell>
-            </Table.Row>
-          </Table.Header>
-          <Table.Body>
-            <Table.Row>
-              <Table.Cell>1</Table.Cell>
-              <Table.Cell>2</Table.Cell>
-              <Table.Cell>3</Table.Cell>
-              <Table.Cell>4</Table.Cell>
-            </Table.Row>
-            <Table.Row>
-              <Table.Cell>5</Table.Cell>
-              <Table.Cell>6</Table.Cell>
-              <Table.Cell>7</Table.Cell>
-              <Table.Cell>8</Table.Cell>
-            </Table.Row>
-            <Table.Row>
-              <Table.Cell>9</Table.Cell>
-              <Table.Cell>10</Table.Cell>
-              <Table.Cell>11</Table.Cell>
-              <Table.Cell>12</Table.Cell>
-            </Table.Row>
-            <Table.Row>
-              <Table.Cell>13</Table.Cell>
-              <Table.Cell>14</Table.Cell>
-              <Table.Cell>15</Table.Cell>
-              <Table.Cell>16</Table.Cell>
-            </Table.Row>
-            <Table.Row>
-              <Table.Cell>17</Table.Cell>
-              <Table.Cell>18</Table.Cell>
-              <Table.Cell>19</Table.Cell>
-              <Table.Cell>20</Table.Cell>
-            </Table.Row>
-          </Table.Body>
-          <Table.Footer>
-            <Table.Row>
-              <Table.Cell collapsing="4">1 Dollar is equal to {inrvalue} INR </Table.Cell>
-            </Table.Row>
-          </Table.Footer>
-        </Table>
-      </div>
-    )
-  }
+  return (
+    <div className='cal_heatmap_content'>
+      <CalendarHeatmap
+        startDate={shiftDate(today, -150)}
+        endDate={today}
+        values={randomValues}
+        classForValue={value => {
+          if (!value) {
+            return 'color-empty';
+          }
+          return `color-github-${value.count}`;
+        }}
+        tooltipDataAttrs={value => {
+          return {
+            'data-tip': `${value.date.toISOString().slice(0, 10)} has count: ${
+              value.count
+            }`,
+          };
+        }}
+        showWeekdayLabels={true}
+        onClick={value => alert(`Clicked on value with count: ${value.count}`)}
+      />
+      <ReactTooltip />
+    </div>
+  )
 }
-
-export default DemoComponent;
