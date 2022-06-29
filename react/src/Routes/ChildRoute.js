@@ -23,10 +23,10 @@ import ShowDivWithJquery from '../MY_REACT/ShowDivWithJquery/ShowDivWithJquery';
 import Custom_Text_Box from '../MY_REACT/Custom_Textbox/Custom_Text_Box';
 import GoogleLocation from '../MY_REACT/Google/GoogleLocation';
 import Custom_Table from '../MY_REACT/Custom_Table/Custom_Table';
-import Cal_Heatmap from '../MY_REACT/Cal_Heatmap/Cal_Heatmap';
 import VideoFIleUploadToBytes from '../MY_REACT/FileUploads/VideoFIleUploadToBytes';
 import FileUploadToArray from '../MY_REACT/FileUploads/FileUploadToArray';
 import FileUploadToFormData from '../MY_REACT/FileUploads/FileUploadToFormData';
+import { Cal_Heatmap } from '../MY_REACT/Heatmap/Cal_Heatmap';
 
 export const ChildRoute = (props) => {
 

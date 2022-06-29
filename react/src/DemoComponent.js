@@ -1,12 +1,12 @@
 import * as React from 'react'
 import './DemoComponent.scss';
-import { Indextwo } from './MY_REACT/Heatmap/Indextwo';
+import { Cal_Heatmap } from './MY_REACT/Heatmap/Cal_Heatmap';
 
 export default function DemoComponent() {
 
   return (
     <>
-      <Indextwo />
+      <Cal_Heatmap />
     </>
   )
 }
