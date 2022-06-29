@@ -1,9 +1,9 @@
 import ReactTooltip from "react-tooltip";
 import Performance from "./Performance";
 import "./heatmap_style.css";
-import Heat_Map_Element from "./Heat_Map_Element";
+import Heat_Map_Element from "./Calender_HeatMap/Heat_Map_Element";
 
-export const Cal_Heatmap = () => (
+export const Indextwo = () => (
   <>
     <ReactTooltip />
     {/* <Performance /> */}

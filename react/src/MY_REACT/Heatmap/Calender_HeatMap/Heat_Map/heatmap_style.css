@@ -1,0 +1,201 @@
+* {
+    font-family: "Roboto", sans-serif;
+  }
+  
+  body {
+    padding: 3em;
+  }
+  
+  header {
+    margin-bottom: 15px;
+  }
+  
+  header > h1 {
+    font-size: 1.5em;
+  }
+  
+  .description {
+    width: 915px;
+    margin-left: 29px;
+    color: #313131;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .description-scales {
+    display: flex;
+  }
+  
+  .scales {
+    display: flex;
+    margin: 0 5px;
+  }
+  
+  .scale {
+    width: 65px;
+    height:8px;
+    margin: 2px;
+    background: silver;
+    /* border-radius: 50%; */
+  }
+  .performace_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .date_div{
+    width: 482px;
+    display: flex;
+    justify-content: space-around;
+  }
+  .range_scale{
+    display: flex!important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .heatmap {
+    width: 960px;
+  }
+  
+  .heatmap rect:hover {
+    stroke: none;
+  }
+  
+  .heatmap text {
+    fill: grey;
+  }
+  .value_contain{
+    width: 204px;
+  }
+  
+  .heatmap-day {
+    transition: opacity 0.25s ease-in;
+  }
+  
+  .react-calendar-heatmap-all-weeks {
+    transform: translate(25px, 0px);
+  }
+  
+  .react-calendar-heatmap-weekday-labels {
+    transform: translate(0px, -13px);
+  }
+  
+  .react-calendar-heatmap-month-labels {
+    transform: translate(25px, 90px);
+  }
+  
+  .react-calendar-heatmap-month-label:hover {
+    cursor: pointer;
+    fill: #111;
+    text-decoration: underline;
+  }
+  
+  .color-scale-4 {
+    background: #787676;
+    fill: #787676;
+  }
+  
+  .color-scale-3 {
+    background: #F09393;
+    fill: #F09393;
+  }
+  
+  .color-scale-2 {
+    background: #53BC5F;
+    fill: #53BC5F;
+  }
+  
+  .color-scale-1 {
+    background: #EBAC5D;
+    fill: #EBAC5D;
+  }
+  
+  .color-scale-0 {
+    background: #F3F3F3;
+    fill: #F3F3F3;
+  }
+  
+  .color-scale-empty {
+    background: #f1f1f1;
+    fill: #f1f1f1;
+  }
+  
+  [data-id="tooltip"]:after {
+    display: none !important;
+  }
+  
+  /*
+ * react-calendar-heatmap styles
+ *
+ * All of the styles in this file are optional and configurable!
+ * The github and gitlab color scales are provided for reference.
+ */
+
+.react-calendar-heatmap text {
+    font-size: 8px;
+    fill: #aaa;
+  }
+  
+  .react-calendar-heatmap .react-calendar-heatmap-small-text {
+    font-size: 5px;
+  }
+  
+  .react-calendar-heatmap rect:hover {
+    stroke: #555;
+    stroke-width: 1px;
+  }
+  
+  /*
+   * Default color scale
+   */
+  
+  .react-calendar-heatmap .color-empty {
+    fill: #eeeeee;
+  }
+  
+  .react-calendar-heatmap .color-filled {
+    fill: #8cc665;
+  }
+  
+  /*
+   * Github color scale
+   */
+  
+  .react-calendar-heatmap .color-github-0 {
+    fill: #eeeeee;
+  }
+  .react-calendar-heatmap .color-github-1 {
+    fill: #d6e685;
+  }
+  .react-calendar-heatmap .color-github-2 {
+    fill: #8cc665;
+  }
+  .react-calendar-heatmap .color-github-3 {
+    fill: #44a340;
+  }
+  .react-calendar-heatmap .color-github-4 {
+    fill: #1e6823;
+  }
+  
+  /*
+   * Gitlab color scale
+   */
+  
+  .react-calendar-heatmap .color-gitlab-0 {
+    fill: #ededed;
+  }
+  .react-calendar-heatmap .color-gitlab-1 {
+    fill: #acd5f2;
+  }
+  .react-calendar-heatmap .color-gitlab-2 {
+    fill: #7fa8d1;
+  }
+  .react-calendar-heatmap .color-gitlab-3 {
+    fill: #49729b;
+  }
+  .react-calendar-heatmap .color-gitlab-4 {
+    fill: #254e77;
+  }
+  
