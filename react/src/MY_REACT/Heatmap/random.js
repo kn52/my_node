@@ -32,13 +32,10 @@ const shiftDate = (date, numDays) => {
 };
 
 const randomValues = (daysCount, today) => {
-  const range = getRange(daysCount).map((index) => {
-    const obj = {
-      date: shiftDate(today, -index),
-      count: getRandomScale()
-    }
-    return (obj);
-});
+  const range = getRange(daysCount).map((index) => ({
+    date: shiftDate(today, -index),
+    count: getRandomScale()
+  }));
 
   const reversedRange = [...range].reverse();
 
@@ -58,24 +55,21 @@ const randomValues = (daysCount, today) => {
       break;
     }
   }
-debugger
+
   return reversedRange;
 };
 
-const randomValuestwo = (arr) => {
-  const range = arr.map((ele, index) => {
-    const obj = {
-      date: new Date(ele.date),
-      count: ele.count
-    }
-    return (obj);
-  });
+const randomValues_Custom = (heat_list) => {
+  const reversedRange = heat_list?.map((ele,index) => ({
+    date: new Date(ele?.date),
+    count: ele?.count
+  }));
 
-  return range;
-}
+  return reversedRange;
+};
 
 export default {
   shiftDate,
   randomValues,
-  randomValuestwo
+  randomValues_Custom
 };

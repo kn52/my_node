@@ -1,13 +1,10 @@
 import React, { useEffect } from "react";
 import CalendarHeatmap from "react-calendar-heatmap";
 import ReactTooltip from "react-tooltip";
-
-import random from "./random";
-import tooltip from "./tootltip";
-import { WEEKDAY_LABELS, getMonthName } from "./date";
-import { getMinAvgMax } from "./math";
 import "react-calendar-heatmap/dist/styles.css";
 import "./heatmap_style.css";
+import heat_map_services from './Heat_Map_Services';
+import heat_list from './heat_map.json';
 
 const classForValue = (value) => {
   const { date, count } = value;
@@ -15,7 +12,8 @@ const classForValue = (value) => {
     return "heatmap-day color-scale-empty";
   }
 
-  const month = getMonthName(date).toLowerCase();
+  // const month = getMonthName(date).toLowerCase();
+  const month = heat_map_services?.getMonthName(date).toLowerCase();
 
   let scale = 0;
   if (count >= 900) {
@@ -41,15 +39,11 @@ const classForValue = (value) => {
 };
 
 const getStatsForMonth = (data, month) => {
-  const filteredByMonth = data.filter(
-    (item) => getMonthName(item.date).toLowerCase() === month.toLowerCase()
-  );
+  const filteredByMonth = data.filter((item) => heat_map_services?.getMonthName(item.date).toLowerCase() === month.toLowerCase());
 
-  const counts = filteredByMonth
-    .map((item) => item.count)
-    .filter((count) => count >= 0);
+  const counts = filteredByMonth.map((item) => item.count).filter((count) => count >= 0);
 
-  const { min, avg, max } = getMinAvgMax(counts);
+  const { min, avg, max } = heat_map_services?.getMinAvgMax(counts);
 
   return {
     min,
@@ -65,44 +59,52 @@ const getDayTooltip = (date, count) => {
 
   return {
     "data-place": "top",
-    "data-tip": tooltip(date, count),
+    "data-tip": heat_map_services?.tooltip(date, count),
   };
 };
 
-const Performance = () => {
-  const today = new Date("09/22/2020");
-  // const today = new Date("01/01/2020");
+const Heat_Map_Element = () => {
+  // const today = new Date("09/22/2020");
+  const today = new Date("01/01/2020");
 
-  const daysCount = 365;
-  // const daysCount = heat_list?.HEAT_MAP?.length;
+  // const daysCount = 365;
+  const daysCount = heat_list?.HEAT_MAP?.length;
 
-  const startDate = random.shiftDate(today, -daysCount);
   // const startDate = random.shiftDate(today, -daysCount);
+  const startDate = heat_map_services?.shiftDate(today, -daysCount);
   
-  const randomValues = random.randomValues(daysCount, today);
-  // const randomValues = random.randomValues_Custom(heat_list?.HEAT_MAP);
+  // const randomValues = random.randomValues(daysCount, today);
+  const randomValues = heat_map_services?.randomValues_Custom(heat_list?.HEAT_MAP);
 
   useEffect(() => {
 
-    const weeklabels = document.querySelectorAll(
-      ".react-calendar-heatmap-weekday-label"
-    );
+    const svg_ele_tag = document.querySelectorAll(".react-calendar-heatmap");
+    const svg_ele = svg_ele_tag[0];
+    
+    if(svg_ele?.attributes){
+      if(svg_ele?.attributes?.length > 1){
+        if(svg_ele?.attributes[1]?.nodeName?.toLowerCase() === "viewbox" && svg_ele?.attributes[1]?.nodeValue?.trim() !== "" ){
+          svg_ele.attributes[1].nodeValue = heat_map_services?.VIEW_BOX_STRING?.toString();
+        }
+      }  
+    }
 
-    const first_weeklabels = weeklabels[0]?.attributes[1]?.nodeValue;
-
+    const weeklabels = document.querySelectorAll(".react-calendar-heatmap-weekday-label");
+    const week_labels_y_axis = heat_map_services?.TEXT_Y_AXIS;
+    // const first_weeklabels = weeklabels[0]?.attributes[1]?.nodeValue;
+    
     weeklabels.forEach((label,index) => {
       const  available_attributes = label.attributes;
         if(available_attributes?.length > 1){
           const node_obj = available_attributes[1];
           if(node_obj?.nodeName?.toLowerCase() === "y" && node_obj?.nodeValue?.trim() !== "" ){
-            label.attributes[1].nodeValue = (parseInt(first_weeklabels) + (index * 12))?.toString();
+            // label.attributes[1].nodeValue = (parseInt(first_weeklabels) + (index * 12))?.toString();
+            label.attributes[1].nodeValue = week_labels_y_axis[index];
           }
         }
     });
 
-    const labels = document.querySelectorAll(
-      ".react-calendar-heatmap-month-label"
-    );
+    const labels = document.querySelectorAll(".react-calendar-heatmap-month-label");
 
     const SEP = "&nbsp;&nbsp;&nbsp;";
     labels.forEach((label) => {
@@ -184,7 +186,7 @@ const Performance = () => {
           classForValue={(value) => classForValue(value)}
           tooltipDataAttrs={(value) => getDayTooltip(value.date, value.count)}
           showWeekdayLabels={true}
-          weekdayLabels={WEEKDAY_LABELS}
+          weekdayLabels={heat_map_services?.WEEKDAY_LABELS}
           gutterSize={2}
         />
       </div>
@@ -217,4 +219,4 @@ const Performance = () => {
   );
 };
 
-export default Performance;
+export default Heat_Map_Element;

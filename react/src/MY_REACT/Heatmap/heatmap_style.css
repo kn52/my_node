@@ -75,7 +75,7 @@
   }
   
   .react-calendar-heatmap-all-weeks {
-    transform: translate(20px, 0px);
+    transform: translate(25px, 0px);
   }
   
   .react-calendar-heatmap-weekday-labels {
@@ -83,7 +83,7 @@
   }
   
   .react-calendar-heatmap-month-labels {
-    transform: translate(32px, 90px);
+    transform: translate(25px, 90px);
   }
   
   .react-calendar-heatmap-month-label:hover {
@@ -198,16 +198,4 @@
   .react-calendar-heatmap .color-gitlab-4 {
     fill: #254e77;
   }
-
-  .react-calendar-heatmap-all-weeks {
-    transform: translate(40px, 0px);
-}
   
-.color-scale-empty {
-  background: #f1f1f1;
-  fill: #f1f1f1;
-}
-
-.heatmap-day {
-  transition: opacity 0.25s ease-in;
-}
