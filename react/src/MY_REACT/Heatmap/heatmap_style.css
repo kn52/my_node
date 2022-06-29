@@ -83,7 +83,7 @@
   }
   
   .react-calendar-heatmap-month-labels {
-    transform: translate(20px, 90px);
+    transform: translate(32px, 90px);
   }
   
   .react-calendar-heatmap-month-label:hover {

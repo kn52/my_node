@@ -58,11 +58,24 @@ const randomValues = (daysCount, today) => {
       break;
     }
   }
-
+debugger
   return reversedRange;
 };
 
+const randomValuestwo = (arr) => {
+  const range = arr.map((ele, index) => {
+    const obj = {
+      date: new Date(ele.date),
+      count: ele.count
+    }
+    return (obj);
+  });
+
+  return range;
+}
+
 export default {
   shiftDate,
-  randomValues
+  randomValues,
+  randomValuestwo
 };

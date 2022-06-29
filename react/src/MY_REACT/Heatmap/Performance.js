@@ -9,6 +9,7 @@ import { getMinAvgMax } from "./math";
 
 import "react-calendar-heatmap/dist/styles.css";
 import "./heatmap_style.css";
+import ram from './heatmap.json';
 
 const classForValue = (value) => {
   const { date, count } = value;
@@ -73,12 +74,13 @@ const getDayTooltip = (date, count) => {
 const Performance = () => {
   // const today = new Date("09/22/2020");
   // const startDate1 = new Date("1/05/2020");
-  const today = new Date("09/22/2020");
+  const today = new Date("01/01/2020");
 
-  const daysCount = 365;
+  const daysCount = ram?.HEAT_MAP?.length;
 
   const startDate = random.shiftDate(today, -daysCount);
-  const randomValues = random.randomValues(daysCount, today);
+  // const randomValues = random.randomValues(daysCount, today);
+  const randomValues = random.randomValuestwo(ram.HEAT_MAP);
 
 
   useEffect(() => {
