@@ -12,7 +12,6 @@ const classForValue = (value) => {
     return "heatmap-day color-scale-empty";
   }
 
-  // const month = getMonthName(date).toLowerCase();
   const month = heat_map_services?.getMonthName(date).toLowerCase();
 
   let scale = 0;
@@ -64,16 +63,14 @@ const getDayTooltip = (date, count) => {
 };
 
 const Heat_Map_Element = () => {
-  // const today = new Date("09/22/2020");
-  const today = new Date("01/01/2020");
+  const today = new Date("09/22/2020");
 
-  // const daysCount = 365;
   const daysCount = heat_list?.HEAT_MAP?.length;
 
-  // const startDate = random.shiftDate(today, -daysCount);
-  const startDate = heat_map_services?.shiftDate(today, -daysCount);
+  const startDate = heat_map_services?.shiftDate(today, -daysCount); 
+
+  const endDate = heat_map_services?.shiftDate(today, 0); 
   
-  // const randomValues = random.randomValues(daysCount, today);
   const randomValues = heat_map_services?.randomValues_Custom(heat_list?.HEAT_MAP);
 
   useEffect(() => {
@@ -90,15 +87,14 @@ const Heat_Map_Element = () => {
     }
 
     const weeklabels = document.querySelectorAll(".react-calendar-heatmap-weekday-label");
-    const week_labels_y_axis = heat_map_services?.TEXT_Y_AXIS;
-    // const first_weeklabels = weeklabels[0]?.attributes[1]?.nodeValue;
+    const yAxisRange = heat_map_services?.getRange(7,"1"); 
+    const week_labels_y_axis = heat_map_services?.TEXT_Y_AXIS(yAxisRange);
     
     weeklabels.forEach((label,index) => {
       const  available_attributes = label.attributes;
         if(available_attributes?.length > 1){
           const node_obj = available_attributes[1];
           if(node_obj?.nodeName?.toLowerCase() === "y" && node_obj?.nodeValue?.trim() !== "" ){
-            // label.attributes[1].nodeValue = (parseInt(first_weeklabels) + (index * 12))?.toString();
             label.attributes[1].nodeValue = week_labels_y_axis[index];
           }
         }
@@ -152,8 +148,6 @@ const Heat_Map_Element = () => {
     });
   }, [randomValues]);
 
-  // console.log("WEEKDAY_LABELS", WEEKDAY_LABELS);
-  
   return (
     <div className="performance">
       <header>
@@ -181,7 +175,7 @@ const Heat_Map_Element = () => {
       <div className="heatmap">
         <CalendarHeatmap
           startDate={startDate}
-          endDate={today}
+          endDate={endDate}
           values={randomValues}
           classForValue={(value) => classForValue(value)}
           tooltipDataAttrs={(value) => getDayTooltip(value.date, value.count)}

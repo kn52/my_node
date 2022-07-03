@@ -1,0 +1,71 @@
+{
+    "status": "ok",
+    "totalResults": 5,
+    "articles": [
+      {
+        "source": {
+          "id": "associated-press",
+          "name": "Associated Press"
+        },
+        "author": "KEN MORITSUGU",
+        "title": "Tennis, sex and politics combine in Chinese #MeToo scandal ",
+        "description": "BEIJING (AP) — Chinese authorities have squelched virtually all online discussion of sexual assault accusations apparently made by a Chinese professional tennis star against a former top government official, showing how sensitive the ruling Communist Party is…",
+        "url": "https://apnews.com/4c0e8bffa89475a545e86112d8efba6f",
+        "urlToImage": "https://storage.googleapis.com/afs-prod/media/673596d4f8db41a38b43ea1218f90e0c/3000.jpeg",
+        "publishedAt": "2021-11-04T09:52:57Z",
+        "content": "BEIJING (AP) — Chinese authorities have squelched virtually all online discussion of sexual assault accusations apparently made by a Chinese professional tennis star against a former top government o… [+3352 chars]"
+      },
+      {
+        "source": {
+          "id": "reddit-r-all",
+          "name": "Reddit /r/all"
+        },
+        "author": null,
+        "title": "Democrats must look beyond Joe Biden and Kamala Harris for 2024",
+        "description": "US Politics: Donald Trump could face a beatable opponent through sheer Democratic inertia",
+        "url": "https://www.irishtimes.com/news/world/us/democrats-must-look-beyond-joe-biden-and-kamala-harris-for-2024-1.4717320?localLinksEnabled=false",
+        "urlToImage": "https://www.irishtimes.com/image-creator/?id=1.4717318&origw=1440",
+        "publishedAt": "2021-11-02T17:09:29Z",
+        "content": "For weeks after she was sworn in as vice-president, an Italian restaurant in Washington displayed no fewer than 10 portraits of Kamala Harris across its patio. Spread over half a block, the pictures … [+492 chars]"
+      },
+      {
+        "source": {
+          "id": "usa-today",
+          "name": "USA Today"
+        },
+        "author": null,
+        "title": "Daily Briefing",
+        "description": "The day's top stories, from sports to movies to politics to world events.",
+        "url": "https://profile.usatoday.com/newsletters/daily-briefing/",
+        "urlToImage": "https://profile.usatoday.com/newsletters/resources/usat/property/usatoday/newsletter-thumbs/8872UT-E-NLETTER02@2x.jpg",
+        "publishedAt": "2021-08-15T15:35:07+00:00",
+        "content": "The day's top stories, from sports to movies to politics to world events."
+      },
+      {
+        "source": {
+          "id": "the-washington-times",
+          "name": "The Washington Times"
+        },
+        "author": "The Washington Times http://www.washingtontimes.com",
+        "title": "Latest Quizzes",
+        "description": "Take a break from the hard news of the day and enjoy a quiz on entertainment, sports, history and politics only from The Washington Times.",
+        "url": "https://www.washingtontimes.com/quiz/",
+        "urlToImage": null,
+        "publishedAt": "2021-02-10T03:52:37.2719772Z",
+        "content": "Featured Quizzes\r\nAttention all William Shakespeare experts. Pinpoint the prose's origin plucked from one of his many famous plays in this multiple-choice challenge.\r\n Shares \r\nName these legendary c… [+32652 chars]"
+      },
+      {
+        "source": {
+          "id": "the-jerusalem-post",
+          "name": "The Jerusalem Post"
+        },
+        "author": null,
+        "title": "Congresswoman Nita Lowey: I am proud to stand with Israel",
+        "description": "Gantz: Security of Israel is above politics; PA: This is a crime.",
+        "url": "https://www.jpost.com/Arab-Israeli-Conflict/Gantz-Security-of-Israel-is-above-politics-Palestinians-This-is-a-crime-607595",
+        "urlToImage": "https://images.jpost.com/image/upload/f_auto,fl_lossy/t_Article2016_ControlFaceDetect/448812",
+        "publishedAt": "2019-11-13T04:41:00Z",
+        "content": "US Ambassador David M. Friedman said the US stands “with our friend and ally Israel at this critical moment” on social media on Tuesday after roughly 170 rockets were fired on Israel from the Gaza St… [+6160 chars]"
+      }
+    ]
+  }

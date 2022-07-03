@@ -55,7 +55,7 @@ const randomValues = (daysCount, today) => {
       break;
     }
   }
-
+  debugger
   return reversedRange;
 };
 

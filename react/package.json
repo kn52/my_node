@@ -16,6 +16,7 @@
     "credit-card-type": "^9.1.0",
     "crypto-js": "^4.0.0",
     "d3": "^7.4.4",
+    "easy-currencies": "^1.7.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
     "enzyme-to-json": "^3.6.1",

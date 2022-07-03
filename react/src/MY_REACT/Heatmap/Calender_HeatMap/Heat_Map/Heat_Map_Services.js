@@ -6,7 +6,13 @@ const dateOptions = {
     day: "numeric"
 };
 
-const TEXT_Y_AXIS = ["22","34","46","58","70","82","94"];
+const getRange = (count = 0, ele = "") => Array.from({ length: count }, (_, i) => ele.length > 0 ? ele : i);
+
+const TEXT_Y_AXIS = (map_list, init = "22") => map_list?.reduce((r_axis, ele, index) => {
+    const Y = (parseInt(init) + (ele * index * 12))?.toString();
+    r_axis.push(Y);
+    return r_axis;
+},[]);
 
 const VIEW_BOX_STRING = "0 0 664 126";
 
@@ -61,6 +67,7 @@ const tooltip = (date, count) => {
 };
 
 export default {
+    getRange,
     TEXT_Y_AXIS,
     VIEW_BOX_STRING,
     randomValues_Custom,
