@@ -1,0 +1,50 @@
+.div {
+  color: "red";
+  border: "1px solid red";
+}
+.input {
+  margin: "2px";
+  padding: "5px";
+}
+
+.item {
+  font-size: 1.2rem;
+  list-style-type: none;
+  padding: 17px 0px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.checkbox {
+  margin-right: 15px;
+}
+
+.item button {
+  font-size: 13px;
+  background: #f1f3f4;
+  border: none;
+  cursor: pointer;
+  float: right;
+  outline: none;
+  border-radius: 100px;
+  height: 50px;
+  width: 50px;
+  margin: -10px 0 0 10px;
+}
+
+@mixin get_property($property, $property_value) {
+  #{$property}: $property_value
+}
+
+
+$color: color;
+
+$icons: (
+  star: "\2605",
+  lightning: "\26A1"
+);
+
+.colorProperty {
+  @each $val in --property_value {
+    @include get_property(color, var($val));
+  }
+}

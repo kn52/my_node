@@ -1,12 +1,30 @@
-import * as React from 'react'
-import './DemoComponent.scss';
-import { Cal_Heatmap } from './MY_REACT/Heatmap/Calender_HeatMap/Heat_Map/Cal_Heatmap';
+import styles from './_.module.scss'
+
+const getColor = (property,property_value) => {
+  return { 
+    [property]: property_value 
+  }
+}
+
+
 
 export default function DemoComponent() {
-
   return (
     <>
-      <Cal_Heatmap />
+      <li className={styles.item}>
+        <input
+          type="checkbox"
+          className={styles.checkbox}
+        />
+        <button >
+          Delete
+        </button>
+        <span className={styles.colorProperty} style={{
+          ['--property_value']:(
+            color:'#ff0000'
+            )
+          }}>{"title"}</span>
+      </li>
     </>
   )
 }

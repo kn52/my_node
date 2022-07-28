@@ -8,6 +8,10 @@ import heat_list from './heat_map.json';
 
 const classForValue = (value) => {
   const { date, count } = value;
+//   const rd = randomValues;
+//   if(index > rd.length -1){
+//     return;
+//   }
   if (count === -1) {
     return "heatmap-day color-scale-empty";
   }
@@ -63,9 +67,10 @@ const getDayTooltip = (date, count) => {
 };
 
 const Heat_Map_Element = () => {
-  const today = new Date("09/22/2020");
+  const today = new Date("10/31/2019");
 
   const daysCount = heat_list?.HEAT_MAP?.length;
+  // const daysCount = 2;
 
   const startDate = heat_map_services?.shiftDate(today, -daysCount); 
 
