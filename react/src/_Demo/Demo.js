@@ -2,6 +2,7 @@ import css_styles from '../_module/scss/_.module.scss'
 import var_styles from '../_module/scss/_var.module.scss'
 
 export default function Demo() {
+  console.log(typeof var_styles?.color_red)
   return (
     <>
       <li className={css_styles.item}>
@@ -13,9 +14,8 @@ export default function Demo() {
           Delete
         </button>
         <span className={css_styles.colorProperty} style={{
-          ['--property_value']: (var_styles.color_red)
+          ['--property_value']: ("#ff0000")
         }}>{"title"}</span>
-        <span style={{ color: var_styles.color_red }}>{"tit3le"}</span>
       </li>
       <br />
       
