@@ -3,11 +3,15 @@ import Home from '../../Home/Home';
 import { AUX_EXP } from '../Auxing/_Aux';
 import './MasterLayout.scss';
 
+const getHomePage = () => {
+    return 
+}
+
 export class MasterLayout extends React.Component {
 
     constructor(props) { 
         super(props);
-        !sessionStorage.getItem("password") && window.location.replace('/') 
+        // !sessionStorage.getItem("password") && window.location.replace('/') 
     }
 
     render() {
@@ -16,18 +20,19 @@ export class MasterLayout extends React.Component {
         return (
             <AUX_EXP>
                 <div className="layout">
-                    <div id="main_header" className="layout_header">
-                        <Home/>
-                    </div>
-                    <div id="main_content" className="layout_content">
-                        {
-                            window.location.href.trim().toLowerCase().includes("home") ?
-                                <div className="hello_msg">
-                                    <h1>Hi <br /> Daemon!</h1>
-                                </div>
-                                : <>{children}</>
-                        }
-                    </div>
+                    {
+                        !window?.location?.href?.includes("home") &&
+                            <div id="main_header" className='layout_header'>
+                                <Home />
+                            </div>
+                    }
+                    {
+                        <div id="main_content" 
+                            className={`layout_content ${window?.location?.href?.includes("home") ? "main_content_border pad_two" : "pad_one"}`}
+                        >
+                            <>{children}</>
+                        </div>
+                    }
                 </div>
             </AUX_EXP>
         );

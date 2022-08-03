@@ -35,16 +35,8 @@
   #{$property}: $property_value
 }
 
-
-$color: color;
-
-$icons: (
-  star: "\2605",
-  lightning: "\26A1"
-);
-
 .colorProperty {
-  @each $val in --property_value {
-    @include get_property(color, var($val));
+  @each $val_one in --property_value {
+    @include get_property(color, var($val_one));
   }
 }

@@ -1,7 +1,7 @@
 import { Paper } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 import AesValidation from "../AESValidation/AesValidation";
-import Encrypt from "../Encryption/Encrypt";
+import {Encrypt} from "../AESValidation/Encryption/Encrypt";
 import './Login.scss';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
@@ -23,7 +23,6 @@ const Login = () => {
     if(e.key !== "Enter"){
       return;
     }
-
     if(password.trim() !== ""){
       if(AesValidation(password)){
         var encppwd = Encrypt(password);

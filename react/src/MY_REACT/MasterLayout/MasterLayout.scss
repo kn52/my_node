@@ -12,6 +12,11 @@
         @extend .height_hundred;
     }
 
+    .main_content_border {
+        border-right: 1px solid #0000ff20;
+        width: 246px;
+    }
+
     .layout_header{
         border: 1px solid #0000ff20;
         border-left: none;
@@ -20,13 +25,12 @@
         padding:10px 0;
         background-color: $color_white;
         position: relative;
-        width: 65px;
+        width: 245px;
         display: $display_flex;
         flex-direction: $flex_direction_column;
     }
 
     .layout_content{
-        padding: 15px;
         overflow: auto;
         @extend .text_decoration_none;
         @extend .width_hundred;
@@ -38,5 +42,13 @@
             color: $theme_color;
             min-height: 400px;
         }
+    }
+
+    .pad_one {
+        padding: 15px;
+    }
+
+    .pad_two {
+        padding: 0;
     }
 }

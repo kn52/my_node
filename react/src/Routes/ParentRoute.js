@@ -1,10 +1,9 @@
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Login from '../Login/Login';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import { Master } from '../MY_REACT/MasterLayout/Master';
 
 export const ParentRoute = () => <>
     <Router>
-        <Route path={["/", "/login"]} exact component={Login} />
-        <Route path="/daemon" component={Master} />
+        <Route path={["/", "/login"]} exact render={()=>{ return (<Redirect to='/demon/home'/>)}} />
+        <Route path="/demon" component={Master} />
     </Router>
 </>

@@ -5,6 +5,7 @@ export const Menus = {
 function ReactMenu(){
     
     const menuarr = [
+        { to: "demo", name: "Demo", prps: null },
         { to: "hellomessage", name: "Hello Message", prps: 'Daemons' },
         { to: "cardtype", name: "Card", prps: null },
         { to: "qrcode", name: "QR Code", prps: null },

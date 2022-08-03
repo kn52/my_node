@@ -27,6 +27,7 @@ import VideoFIleUploadToBytes from '../MY_REACT/FileUploads/VideoFIleUploadToByt
 import FileUploadToArray from '../MY_REACT/FileUploads/FileUploadToArray';
 import FileUploadToFormData from '../MY_REACT/FileUploads/FileUploadToFormData';
 import { Cal_Heatmap } from '../MY_REACT/Heatmap/Calender_HeatMap/Heat_Map/Cal_Heatmap';
+import Demo from '../_Demo/Demo';
 
 export const ChildRoute = (props) => {
 
@@ -34,6 +35,7 @@ export const ChildRoute = (props) => {
 
     return (
         <MasterLayout>
+            <PrivateRoute path={`${match.url}/demo`} exact component={Demo} />
             <PrivateRoute path={`${match.url}/hellomessage`} exact component={HelloMessage} />
             <PrivateRoute path={`${match.url}/home`} exact component={Home} />
             <PrivateRoute path={`${match.url}/cardtype`} exact component={CheckCardType} />

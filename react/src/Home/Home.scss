@@ -5,11 +5,36 @@
 .home_main{
 
     @extend .width_hundred;
-    height: 90%;
-
+        height: 100vh;
+        width: 245px;
+    
+        overflow-y: scroll;
+        overflow-x: hidden;
+    
+        &::-webkit-scrollbar {
+            width: 0px;
+        }
+    
+        /* Track */
+        &::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px #fff;
+            border-radius: 5px;
+        }
+    
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+            background: $theme_color;
+            border-radius: 0px;
+        }
+    
+        /* Handle on hover */
+        &::-webkit-scrollbar-thumb:hover {
+            background: #fff;
+        }
     .menu_content{
         display: $display_flex;
         flex-direction: $flex_direction_column;
+        padding-top: 15px;
 
         ._active{
             background-color: #33b5e512;
@@ -81,21 +106,32 @@
         background-color: $color_white;
     }
 
+    .react_list_head {
+        display: flex;
+    }
+
+    .react_list {
+        display: flex;
+        flex-direction: column;
+    }
+
     .dropdown_content{
-        position: absolute;
-        z-index: 1001;
-        left: 40px;
-        height: 350px;
+        // position: absolute;
+        // z-index: 1001;
+        // left: 40px;
+        // height: 350px;
         border: none;
         overflow: auto; 
-        background-color: $color_white; 
-        box-shadow: 0px 2px 8px 0px #0000ff20; 
+        background-color: #33b5e500; 
+        padding-top: 5px;
+        // box-shadow: 0px 2px 8px 0px #0000ff20; 
 
         & > p {
             font-size: 15px;
             color: $theme_color;
             padding: 5px 10px;
             margin: 0;
+            border-bottom: 1px solid #0000ff50;
         }
 
         
@@ -184,6 +220,12 @@
         overflow: hidden;   
         @extend .cursor_pointer;
     
+        .home_text {
+            color: #33b5e5;
+            font-size: 20px;
+            text-decoration: none;
+            font-weight: 600;
+        }
         .menu_content_icon{
             width: 40px;
             height: 40px;
