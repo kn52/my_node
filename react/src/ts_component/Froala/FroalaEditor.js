@@ -41,7 +41,7 @@ export const FroalaEditor = () => {
   useEffect(() => {
     if (isFroalaInitialized) {
       tribute.attach(editor.el);
-      editor.html.set(model);
+      editor?.html?.set(model);
     }
   }, [isFroalaInitialized]);
 
