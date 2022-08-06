@@ -31,6 +31,9 @@ function ReactMenu(){
         { to: "videofileuploadtobytes", name: "Video File Upload To Bytes", prps: null },
         { to: "fileuploadtoarray", name: "File Upload To Array", prps: null },
         { to: "fileuploadtoformdata", name: "File Upload To FormData", prps: null },
+        { to: "tarticle", name: "Article", prps: null },
+        { to: "tcounter", name: "Counter", prps: null },
+        { to: "tfroalaeditor", name: "FroalaEditor", prps: null },
         // { to: "pwahome", name: "Pwa Home", prps: null },
     ];
 

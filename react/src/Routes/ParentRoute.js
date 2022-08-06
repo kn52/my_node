@@ -3,7 +3,7 @@ import { Master } from '../MY_REACT/MasterLayout/Master';
 
 export const ParentRoute = () => <>
     <Router>
-        <Route path={["/", "/login"]} exact render={()=>{ return (<Redirect to='/demon/home'/>)}} />
+        <Route path={["/", "/login"]} exact render={()=>{ return (<Redirect to='/demon/demo'/>)}} />
         <Route path="/demon" component={Master} />
     </Router>
 </>

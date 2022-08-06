@@ -20,6 +20,7 @@
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
     "enzyme-to-json": "^3.6.1",
+    "froala-editor": "^3.0.4",
     "google-currency": "^1.0.7",
     "iin-checker": "^0.6.0",
     "jest-cli": "^26.6.3",
@@ -40,6 +41,7 @@
     "react-click-away-listener": "^2.0.5",
     "react-countdown-circle-timer": "^2.5.0",
     "react-dom": "^17.0.1",
+    "react-froala-wysiwyg": "^3.0.4",
     "react-otp-input": "^2.3.1",
     "react-public-ip": "^1.0.0",
     "react-qr-code": "^1.1.1",
@@ -49,10 +51,12 @@
     "react-scripts": "4.0.1",
     "react-select": "^5.2.1",
     "react-tooltip": "^4.2.21",
+    "react-tribute": "^1.0.4",
     "react-weblineindia-qrcode-generator": "^1.0.0",
     "redux": "^4.0.5",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^2.0.3",
+    "tributejs": "^3.7.3",
     "web-vitals": "^0.2.4",
     "xlsx": "^0.18.5"
   },
@@ -81,6 +85,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-dom": "^18.0.6",
     "typescript": "^4.2.3"
   }
 }

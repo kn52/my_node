@@ -10,10 +10,11 @@ import { ActionType } from '../Redux/Actions/ActionTypes';
 
 const Home = () => {
 
-    const { usr } = useSelector((state)=>({
-        usr: state.login.username
-    }),shallowEqual);
+    // const { usr } = useSelector((state)=>({
+    //     usr: state.login.username
+    // }),shallowEqual);
 
+    const usr = "";
     const [currentPage,setCurrentPage] = useState("home");
     const [isLogout,setIsLogout] = useState(false);
 
