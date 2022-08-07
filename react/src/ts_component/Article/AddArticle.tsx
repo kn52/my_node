@@ -4,7 +4,6 @@ type Props = {
     saveArticle: (article: IArticle | any) => void
 }
 
-
 export const AddArticle: React.FC<Props> = ({ saveArticle }) => {
 
     const [article, setArticle] = useState<IArticle | {}>()

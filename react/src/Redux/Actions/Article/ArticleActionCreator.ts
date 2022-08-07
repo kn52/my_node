@@ -1,17 +1,13 @@
 import * as actionTypes from "./ArticleActions"
 
-export function addArticle(article: IArticle) {
+const CreateAction = (_actionType: any, article: IArticle) => {
   const action: ArticleAction = {
-    type: actionTypes.ADD_ARTICLE,
+    type: _actionType,
     article,
   }
   return action;
 }
 
-export function removeArticle(article: IArticle) {
-  const action: ArticleAction = {
-    type: actionTypes.REMOVE_ARTICLE,
-    article,
-  }
-  return action;
-}
+export const addArticle = (article: IArticle) => CreateAction(actionTypes.ADD_ARTICLE, article)
+
+export const removeArticle = (article: IArticle) => CreateAction(actionTypes.REMOVE_ARTICLE, article)

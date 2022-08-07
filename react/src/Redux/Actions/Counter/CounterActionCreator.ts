@@ -1,17 +1,16 @@
 import * as actionTypes from "./CounterActions"
 
-export function incrementCount(ct: any) {
+const CreateAction = (_actionType: any, _count: any, _hits: any) => {
   const action: any = {
-    type: actionTypes.INCREMENT,
-    count: ct,
+    type: _actionType,
+    count: _count,
+    hits: _hits
   }
   return action;
 }
 
-export function decrementCount(ct: any) {
-  const action: any = {
-    type: actionTypes.DECREMENT,
-    count: ct,
-  }
-  return action;
-}
+export const incrementCount = (_count: any, _hits: any) => CreateAction(actionTypes.INCREMENT, _count,_hits)
+
+export const decrementCount = (_count: any, _hits: any) =>  CreateAction(actionTypes.DECREMENT, _count,_hits);
+
+export const resetCount = (_count: any, _hits: any) => CreateAction(actionTypes.RESET, _count,_hits);

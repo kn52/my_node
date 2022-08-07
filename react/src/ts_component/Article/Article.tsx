@@ -3,7 +3,7 @@ import { useSelector, shallowEqual, useDispatch } from "react-redux"
 import "./Article.scss"
 import { RemoveArticle } from "./RemoveArticle"
 import { AddArticle } from "./AddArticle"
-import { addArticle, removeArticle } from "../../Redux/Actions/Article/ArticleActionCreator"
+import * as action_creator from "../../Redux/Actions/Article/ArticleActionCreator"
 import { Dispatch } from "redux"
 
 export const Article: React.FC = () => {
@@ -11,7 +11,7 @@ export const Article: React.FC = () => {
 
     const dispatch: Dispatch<any> = useDispatch()
 
-    const saveArticle = (article: IArticle) => dispatch(addArticle(article))
+    const saveArticle = (article: IArticle) => dispatch(action_creator.addArticle(article))
 
     return (
         <main>
@@ -21,7 +21,7 @@ export const Article: React.FC = () => {
                 <RemoveArticle
                     key={article.id}
                     article={article}
-                    removeArticle={removeArticle}
+                    removeArticle={action_creator.removeArticle}
                 />
             ))}
         </main>

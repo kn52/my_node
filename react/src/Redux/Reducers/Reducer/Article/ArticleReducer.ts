@@ -1,6 +1,5 @@
 import * as actionTypes  from "../../../Actions/Article/ArticleActions";
 
-
 const iState: ArticleState = {
     articles: [
         {
@@ -39,6 +38,7 @@ export const ArticleReducer = (state: ArticleState = iState, action: ArticleActi
                 ...state,
                 articles: updatedArticles,
             }
+        default:
+            return state
     }
-    return state
 }
