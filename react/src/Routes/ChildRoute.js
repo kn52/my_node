@@ -29,7 +29,7 @@ import FileUploadToFormData from '../MY_REACT/FileUploads/FileUploadToFormData';
 import { Cal_Heatmap } from '../MY_REACT/Heatmap/Calender_HeatMap/Heat_Map/Cal_Heatmap';
 import Demo from '../_Demo/Demo';
 import { Article } from '../ts_component/Article/Article';
-import { Counter } from '../ts_component/Counter/Counter';
+import Counter from '../ts_component/Counter/Counter';
 import { FroalaEditor } from '../ts_component/Froala/FroalaEditor';
 
 export const ChildRoute = (props) => {

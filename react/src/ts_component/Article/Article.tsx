@@ -7,7 +7,7 @@ import * as action_creator from "../../Redux/Actions/Article/ArticleActionCreato
 import { Dispatch } from "redux"
 
 export const Article: React.FC = () => {
-    const articles: any = useSelector((state: any) => state?.article?.articles,shallowEqual)
+    const { articles, articlesCount }: any = useSelector((state: any) => state?.article,shallowEqual)
 
     const dispatch: Dispatch<any> = useDispatch()
 
@@ -17,6 +17,7 @@ export const Article: React.FC = () => {
         <main>
             <h1>My Articles</h1>
             <AddArticle saveArticle={saveArticle} />
+            <h2>Total Articles: {articlesCount}</h2>
             {articles?.map((article: IArticle) => (
                 <RemoveArticle
                     key={article.id}

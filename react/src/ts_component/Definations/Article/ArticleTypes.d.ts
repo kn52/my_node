@@ -5,7 +5,8 @@ interface IArticle {
 }
 
 type ArticleState = {
-    articles: IArticle[]
+    articles: IArticle[],
+    articlesCount: number
 }
 
 type ArticleAction = {

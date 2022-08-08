@@ -14,7 +14,8 @@ const iState: ArticleState = {
             body:
               "Harum quidem rerum facilis est et expedita distinctio quas molestias excepturi sint"
           }
-    ]
+    ],
+    articlesCount: 2
 }
 
 
@@ -26,9 +27,11 @@ export const ArticleReducer = (state: ArticleState = iState, action: ArticleActi
                 title: action.article.title,
                 body: action.article.body,
             }
+            const addedArticles: IArticle[] = state.articles.concat(newArticle)
             return {
                 ...state,
-                articles: state.articles.concat(newArticle),
+                articles: addedArticles,
+                articlesCount: addedArticles?.length
             }
         case actionTypes.REMOVE_ARTICLE:
             const updatedArticles: IArticle[] = state.articles.filter(
@@ -37,6 +40,7 @@ export const ArticleReducer = (state: ArticleState = iState, action: ArticleActi
             return {
                 ...state,
                 articles: updatedArticles,
+                articlesCount: updatedArticles?.length
             }
         default:
             return state

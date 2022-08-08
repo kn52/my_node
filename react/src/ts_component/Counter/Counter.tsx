@@ -1,32 +1,53 @@
 import * as React from 'react';
-import { shallowEqual, useDispatch, useSelector } from 'react-redux';
+import { connect, ConnectedProps } from 'react-redux';
 import * as action_creator from '../../Redux/Actions/Counter/CounterActionCreator';
 import { Count } from './Count';
-import { Dispatch } from "redux"
 import './Counter.scss'
+class Counter extends React.Component<HeaderProps> {
+    state: any = {
+        counter: 0,
+        hits: 0
+    }
 
-export const Counter: React.FC = () => {
+    increment = ({ct}: any, {hts}: any) => this.props.incrementSet(action_creator.incrementCount(ct,hts));
 
-    const { counter, hits }: any = useSelector((state: any) => state?.count, shallowEqual);
+    decrement = ({ct}: any, {hts}: any) => this.props.decrementSet(action_creator.decrementCount(ct,hts));
 
-    const dispatch: Dispatch<any> = useDispatch();
+    reset = () => this.props.resetSet(action_creator.resetCount(0,0));
 
-    const increment = () => dispatch(action_creator.incrementCount(counter,hits));
-
-    const decrement = () => dispatch(action_creator.decrementCount(counter,hits));
-
-    const reset = () => dispatch(action_creator.resetCount(0,0));
-
-    return (
-        <div className='counter_main'>
-            <Count count={counter} hits={hits}/>
-            <div className='btns'>
-                <button onClick={decrement} className='decrement_button'>Decrement</button>
-                <button onClick={increment} className='increment_button'>Increment</button>
+    render() {
+        return (
+            <div className='counter_main'>
+                <Count count={this.props.tcounter} hits={this.props.hits} />
+                <div className='btns'>
+                    <button onClick={() => this.decrement(this.props.tcounter, this.props.hits)} className='decrement_button'>Decrement</button>
+                    <button onClick={() => this.increment(this.props.tcounter, this.props.hits)} className='increment_button'>Increment</button>
+                </div>
+                <div className='btns'>
+                    <button onClick={() => this.reset()} className='reset_button'>Reset</button>
+                </div>
             </div>
-            <div className='btns'>
-                <button onClick={reset} className='reset_button'>Reset</button>
-            </div>
-        </div>
-    );
+        )
+    };
 }
+
+const mapState = (state: any) => {
+    return {
+        tcounter: state?.count?.counter,
+        hits: state?.count?.hits
+    }
+}
+
+const mapDispatch = (dispatch: any) => {
+    return {
+        incrementSet: (ele: any) => dispatch(ele),
+        decrementSet: (ele: any) => dispatch(ele),
+        resetSet: (ele: any) => dispatch(ele)
+    }
+}
+
+const Connector = connect(mapState, mapDispatch);
+
+type HeaderProps = ConnectedProps<typeof Connector>;
+
+export default Connector<any>(Counter);
