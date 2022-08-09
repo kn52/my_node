@@ -1,0 +1,1 @@
+export const messageConsole = (_msg: any,_msgTxt: any): any => console.log(_msgTxt+":: "+_msg);

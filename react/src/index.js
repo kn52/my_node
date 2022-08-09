@@ -4,7 +4,8 @@ import './index.css';
 import { App } from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import store from './Redux/Stores/Store';
+import { PersistGate } from "redux-persist/integration/react";
+import * as stores from './Redux/Stores/Store';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const styleLink = document.createElement("link");
@@ -14,8 +15,11 @@ document.head.appendChild(styleLink);
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
+    <Provider store={stores.store}>
       <App />
+      {/* <PersistGate persistor={stores.persistedStore}>
+        <App />
+      </PersistGate> */}
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

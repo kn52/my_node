@@ -3,17 +3,15 @@ import * as actionTypes  from "../../../Actions/Article/ArticleActions";
 const iState: ArticleState = {
     articles: [
         {
-            id: 1,
-            title: "post 1",
-            body:
-              "Quisque cursus, metus vitae pharetra Nam libero tempore, cum soluta nobis est eligendi"
-          },
-          {
-            id: 2,
-            title: "post 2",
-            body:
-              "Harum quidem rerum facilis est et expedita distinctio quas molestias excepturi sint"
-          }
+            "id": 1,
+            "title": "post 1",
+            "body": "Quisque cursus, metus vitae pharetra Nam libero tempore, cum soluta nobis est eligendi"
+        },
+        {
+            "id": 2,
+            "title": "post 2",
+            "body": "Harum quidem rerum facilis est et expedita distinctio quas molestias excepturi sint"
+        }
     ],
     articlesCount: 2
 }

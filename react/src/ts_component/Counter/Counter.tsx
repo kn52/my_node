@@ -9,11 +9,11 @@ class Counter extends React.Component<HeaderProps> {
         hits: 0
     }
 
-    increment = ({ct}: any, {hts}: any) => this.props.incrementSet(action_creator.incrementCount(ct,hts));
+    increment = (ct: any, hts: any) => this.props.incrementSet((ct: any, hts: any) => action_creator.incrementCount(ct,hts));
 
-    decrement = ({ct}: any, {hts}: any) => this.props.decrementSet(action_creator.decrementCount(ct,hts));
+    decrement = (ct: any, hts: any) => this.props.decrementSet((ct: any, hts: any) => action_creator.decrementCount(ct,hts));
 
-    reset = () => this.props.resetSet(action_creator.resetCount(0,0));
+    reset = (ct: any, hts: any) => this.props.resetSet((ct: any, hts: any) => action_creator.resetCount(ct,hts));
 
     render() {
         return (
@@ -24,7 +24,7 @@ class Counter extends React.Component<HeaderProps> {
                     <button onClick={() => this.increment(this.props.tcounter, this.props.hits)} className='increment_button'>Increment</button>
                 </div>
                 <div className='btns'>
-                    <button onClick={() => this.reset()} className='reset_button'>Reset</button>
+                    <button onClick={() => this.reset(0,0)} className='reset_button'>Reset</button>
                 </div>
             </div>
         )
