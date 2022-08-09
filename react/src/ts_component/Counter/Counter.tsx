@@ -9,11 +9,11 @@ class Counter extends React.Component<HeaderProps> {
         hits: 0
     }
 
-    increment = (ct: any, hts: any) => this.props.incrementSet((ct: any, hts: any) => action_creator.incrementCount(ct,hts));
+    increment = (ct: any, hts: any) => this.props.incrementSet(action_creator.incrementCount(ct,hts));
 
-    decrement = (ct: any, hts: any) => this.props.decrementSet((ct: any, hts: any) => action_creator.decrementCount(ct,hts));
+    decrement = (ct: any, hts: any) => this.props.decrementSet(action_creator.decrementCount(ct,hts));
 
-    reset = (ct: any, hts: any) => this.props.resetSet((ct: any, hts: any) => action_creator.resetCount(ct,hts));
+    reset = (ct: any, hts: any) => this.props.resetSet(action_creator.resetCount(ct,hts));
 
     render() {
         return (
