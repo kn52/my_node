@@ -34,6 +34,7 @@ function ReactMenu(){
         { to: "tarticle", name: "Article", prps: null },
         { to: "tcounter", name: "Counter", prps: null },
         { to: "tfroalaeditor", name: "FroalaEditor", prps: null },
+        { to: "editeditor", name: "EditEditor", prps: null },
         // { to: "pwahome", name: "Pwa Home", prps: null },
     ];
 

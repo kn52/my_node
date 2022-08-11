@@ -1,6 +1,6 @@
-import '../stylesheets/Edit.css';
+import '../stylesheets/EditEditor.css';
 import Something from './SlateEditor/Editor'
 import 'katex/dist/katex.min.css';
 
-const Edit = () => <div className="App"><Something/></div>
+export const EditEditor = () => <div className="App"><Something/></div>
 

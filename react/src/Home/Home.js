@@ -53,7 +53,9 @@ const Home = () => {
                     <div className='react_list'>
                         <div className='react_list_head'>
                             <img src={react_icon} className='menu_content_icon' alt="react" />
-                            <button className="dropdown_button menu_content_text" style={currentPage !== "home" ? { backgroundColor: '#33b5e500' } : { backgroundColor: '#fff' }}>React</button>
+                            <button className="dropdown_button menu_content_text" style={currentPage !== "home" ? { backgroundColor: '#33b5e500' } : { backgroundColor: '#fff' }}>
+                                <span className='span_text'>React</span>
+                            </button>
                         </div>
                         {
                             toggleReactDropdown &&

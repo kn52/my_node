@@ -3,7 +3,7 @@ import { useSelector, shallowEqual, useDispatch } from "react-redux"
 import "./Article.scss"
 import { RemoveArticle } from "./RemoveArticle"
 import { AddArticle } from "./AddArticle"
-import * as action_creator from "../../Redux/Actions/Article/ArticleActionCreator"
+import * as action_creator from "../../../Redux/Actions/Article/ArticleActionCreator"
 import { Dispatch } from "redux"
 
 export const Article: React.FC = () => {

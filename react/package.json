@@ -1,5 +1,5 @@
 {
-  "name": "my-front",
+  "name": "node_world",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -82,7 +82,7 @@
     "react-katex": "^2.0.2",
     "slate-history": "^0.62.0",
     "slate": "^0.63.0",
-    "slate-react": "^0.65.2"  
+    "slate-react": "^0.65.2"
   },
   "scripts": {
     "start": "set PORT=4200 && react-scripts start",

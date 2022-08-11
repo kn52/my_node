@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { connect, ConnectedProps } from 'react-redux';
-import * as action_creator from '../../Redux/Actions/Counter/CounterActionCreator';
+import * as action_creator from '../../../Redux/Actions/Counter/CounterActionCreator';
 import { Count } from './Count';
 import './Counter.scss'
 class Counter extends React.Component<HeaderProps> {
