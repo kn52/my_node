@@ -20,16 +20,19 @@ export class MasterLayout extends React.Component {
         return (
             <AUX_EXP>
                 <div className="layout">
+                    <div id="main_header" className='layout_header'>
+                        {
+                            window?.location?.href?.includes("home") &&
+                            <>{children}</>
+                        }
+                        {
+                            !window?.location?.href?.includes("home") &&
+                            <Home />
+                        }
+                    </div>
                     {
                         !window?.location?.href?.includes("home") &&
-                            <div id="main_header" className='layout_header'>
-                                <Home />
-                            </div>
-                    }
-                    {
-                        <div id="main_content" 
-                            className={`layout_content ${window?.location?.href?.includes("home") ? "main_content_border pad_two" : "pad_one"}`}
-                        >
+                        <div id="main_content" className={`layout_content pad_one`}>
                             <>{children}</>
                         </div>
                     }
