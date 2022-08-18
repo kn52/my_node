@@ -36,6 +36,8 @@
     "jquery": "^3.6.0",
     "jsx-to-string": "^1.4.0",
     "local-ip-address": "^1.0.0",
+    "mobx": "^6.6.1",
+    "mobx-react-lite": "^3.4.0",
     "moment": "^2.29.1",
     "node-csv": "^0.1.2",
     "node-sass": "^4.14.1",
@@ -87,7 +89,7 @@
     "xlsx": "^0.18.5"
   },
   "scripts": {
-    "start": "set PORT=4200 && react-scripts start",
+    "start": "set PORT=4100 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
