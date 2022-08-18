@@ -1,0 +1,4 @@
+const mssage = "hello world"
+const esp_mssage = escape("hello world")
+
+document.getElementsByTagName("main").innerHtml = `<p>${esp_mssage}</p>`;

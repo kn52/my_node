@@ -31,6 +31,14 @@
   margin: -10px 0 0 10px;
 }
 
+.cursor_pointer {
+  cursor: pointer;
+}
+
+.theme_color {
+  color: #33b5e5;
+}
+
 @mixin get_property($property, $property_value) {
   #{$property}: $property_value
 }

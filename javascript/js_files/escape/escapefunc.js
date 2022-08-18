@@ -1,0 +1,1 @@
+document.getElementById("escape_demo").innerHTML = escape("hello world");
