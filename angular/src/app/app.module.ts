@@ -1,19 +1,10 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule, routing_components } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { ByeComponent } from './bye/bye.component';
+import * as _app from './routes/app_routes';
 @NgModule({
-  declarations: [
-    AppComponent,
-    routing_components,
-    ByeComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  declarations: _app.app_declarations,
+  imports: _app.app_imports,
+  providers: _app.app_providers,
+  bootstrap: _app.app_bootstrap
 })
+
 export class AppModule {}
